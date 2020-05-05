@@ -16,5 +16,5 @@ public class Main {
         final TextUserInterface tui = new TextUserInterface(model);
         tui.run();
     }
-    
+
 }
