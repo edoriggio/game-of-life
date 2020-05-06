@@ -12,24 +12,24 @@ public class Grid {
 
     public Grid(int row, int col) {
         grid = new int[row][col];
-        // vectors to represents neigbors
+        // vectors to represents neighbors
         // north, south, east, west
         rule_row = new int[]{-1, +1, 0, 0};
         rule_col = new int[]{0, 0, +1, -1};
 
-        cols = col-1;
-        rows = row-1;
+        cols = col - 1;
+        rows = row - 1;
     }
 
     private boolean inRange(int row, int col) {
-        return (row >=0 && col >= 0 && col <= cols && row <= rows);
+        return (row >= 0 && col >= 0 && col <= cols && row <= rows);
     }
 
-    private List<int[]> getNeihgbors(int row, int col) {
+    private List<int[]> getNeighbors(int row, int col) {
         LinkedList<int[]> result = new LinkedList<>();
         int rr;
         int cc;
-        for(int i=0; i < rule_row.length; i++) {
+        for (int i = 0; i < rule_row.length; i++) {
             rr = row + rule_row[i];
             cc = col + rule_col[i];
 
@@ -37,6 +37,7 @@ public class Grid {
                 result.add(new int[]{rr, cc});
             }
         }
+
         return result;
     }
 
@@ -48,9 +49,10 @@ public class Grid {
      */
     public int getNumberOfNeighbors(final int row, final int col) {
         int counter = 0;
-        int rr, cc;
+        int rr;
+        int cc;
 
-        for(int i = 0; i < rule_row.length; i++) {
+        for (int i = 0; i < rule_row.length; i++) {
             rr = row + rule_row[i];
             cc = col + rule_col[i];
             if (inRange(rr, cc)) {
@@ -62,11 +64,9 @@ public class Grid {
         return counter;
     }
 
-    public void printNeigbors(int row, int col) {
-        for(int[] pair : getNeihgbors(row, col)) {
-            System.out.println(pair[0]+" "+pair[1]);
+    public void printNeighbors(int row, int col) {
+        for (int[] pair : getNeighbors(row, col)) {
+            System.out.println(pair[0] + " " + pair[1]);
         }
     }
-
-
 }

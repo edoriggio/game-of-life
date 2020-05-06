@@ -15,9 +15,9 @@ public class Main {
      */
     public static void main(final String[] args) {
         Grid test_grid = new Grid(10, 20);
-        test_grid.printNeigbors(5,5);
+        test_grid.printNeighbors(5,5);
         System.out.println("__");
-        test_grid.printNeigbors(0,0);
+        test_grid.printNeighbors(0,0);
         final Model model = new Model();
         final TextUserInterface tui = new TextUserInterface(model);
         tui.run();
