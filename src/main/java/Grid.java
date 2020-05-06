@@ -40,6 +40,12 @@ public class Grid {
         return result;
     }
 
+    /**
+     * Get the number of neighbouring cells that are alive.
+     * @param row the row position
+     * @param col the column position
+     * @return the number of neighbouring cell that are alive
+     */
     public int getNumberOfNeighbors(final int row, final int col) {
         int counter = 0;
         int rr, cc;
