@@ -14,6 +14,10 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(final String[] args) {
+        Grid test_grid = new Grid(10, 20);
+        test_grid.printNeigbors(5,5);
+        System.out.println("__");
+        test_grid.printNeigbors(0,0);
         final Model model = new Model();
         final TextUserInterface tui = new TextUserInterface(model);
         tui.run();
