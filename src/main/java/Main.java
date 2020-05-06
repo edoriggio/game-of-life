@@ -18,7 +18,7 @@ public class Main {
         test_grid.printNeighbors(5,5);
         System.out.println("__");
         test_grid.printNeighbors(0,0);
-        final Model model = new Model();
+        final GameOfLife model = new GameOfLife();
         final TextUserInterface tui = new TextUserInterface(model);
         tui.run();
     }

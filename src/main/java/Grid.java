@@ -21,6 +21,14 @@ public class Grid {
         rows = row - 1;
     }
 
+    public int getRowsNumber() {
+        return rows;
+    }
+
+    public int getColsNumber() {
+        return cols;
+    }
+
     private boolean inRange(int row, int col) {
         return (row >= 0 && col >= 0 && col <= cols && row <= rows);
     }
@@ -64,20 +72,16 @@ public class Grid {
         return counter;
     }
 
-<<<<<<< HEAD
-    public void printNeighbors(int row, int col) {
-        for (int[] pair : getNeighbors(row, col)) {
-            System.out.println(pair[0] + " " + pair[1]);
-=======
+
     /**
      * Print all neighbouring positions of the given cell.
      * @param row the row of the cell
      * @param col the column of the cell
      */
-    public void printNeigbors(int row, int col) {
-        for(int[] pair : getNeihgbors(row, col)) {
-            System.out.println(pair[0]+" "+pair[1]);
->>>>>>> bcf30388225167cde80a9b686811ddf22f1b3760
+    public void printNeighbors(int row, int col) {
+        for (int[] pair : getNeighbors(row, col)) {
+            System.out.println(pair[0] + " " + pair[1]);
+
         }
     }
 }
