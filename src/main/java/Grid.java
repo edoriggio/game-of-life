@@ -4,14 +4,14 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Grid {
-    private int[][] grid;
+    private Cell[][] grid;
     private final int[] rule_row;
     private final int[] rule_col;
     private final int rows;
     private final int cols;
 
     public Grid(int row, int col) {
-        grid = new int[row][col];
+        grid = new Cell[row][col];
         // vectors to represents neighbors
         // north, south, east, west
         rule_row = new int[]{-1, +1, 0, 0};
@@ -21,11 +21,11 @@ public class Grid {
         rows = row - 1;
     }
 
-    private boolean inRange(int row, int col) {
+    private boolean inRange(final int row, final int col) {
         return (row >= 0 && col >= 0 && col <= cols && row <= rows);
     }
 
-    private List<int[]> getNeighbors(int row, int col) {
+    private List<int[]> getNeighbors(final int row, final int col) {
         LinkedList<int[]> result = new LinkedList<>();
         int rr;
         int cc;
@@ -56,7 +56,7 @@ public class Grid {
             rr = row + rule_row[i];
             cc = col + rule_col[i];
             if (inRange(rr, cc)) {
-                if (grid[rr][cc] == 1) {
+                if (grid[rr][cc].isAlive()) {
                     counter += 1;
                 }
             }
@@ -80,7 +80,7 @@ public class Grid {
      * @param row the row of the cell
      * @param col the column of the cell
      */
-    public void printNeighbors(int row, int col) {
+    public void printNeighbors(final int row, final int col) {
         for (int[] pair : getNeighbors(row, col)) {
             System.out.println(pair[0] + " " + pair[1]);
 
