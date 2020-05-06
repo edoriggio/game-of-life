@@ -25,7 +25,7 @@ public class Grid {
         return (row >= 0 && col >= 0 && col <= cols && row <= rows);
     }
 
-    private List<int[]> getNeighbors(final int row, final int col) {
+    private LinkedList<int[]> getNeighbors(final int row, final int col) {
         LinkedList<int[]> result = new LinkedList<>();
         int rr;
         int cc;
