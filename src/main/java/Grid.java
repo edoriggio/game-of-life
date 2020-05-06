@@ -21,14 +21,6 @@ public class Grid {
         rows = row - 1;
     }
 
-    public int getRowsNumber() {
-        return rows;
-    }
-
-    public int getColsNumber() {
-        return cols;
-    }
-
     private boolean inRange(int row, int col) {
         return (row >= 0 && col >= 0 && col <= cols && row <= rows);
     }
@@ -72,6 +64,16 @@ public class Grid {
         return counter;
     }
 
+    /**
+     * Modify the given Grid of cells according to the status of the Grid calling the method.
+     * @param gridToUpdate the grid that will be modified
+     */
+    public void calculateNext(Grid gridToUpdate) {
+        // modify gridToUpdate depending on this grid
+        // that means for each position in this grid, compute the number
+        // of neighbors and depending of this number chose if the new cell must
+        // die/stay alive/live
+    }
 
     /**
      * Print all neighbouring positions of the given cell.

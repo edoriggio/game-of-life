@@ -17,13 +17,17 @@ public class GameOfLife {
 
     private void randomlyPopulateGrid() {
         // fill random positions with live cells
+        // currentGrid().populate()
     }
 
     public void step() {
-        // for each cell, compute the new value of it ( 0 or 1 ) for the next step
-        // put the value in nextStepGrid
-        // swap reference between currentGrid and nextStepGrid, so that for
-        // the next step we have the updated grid as current
+        // modify nextStepGrid according to the state of currentGrid
+        currentGrid.calculateNext(nextStepGrid);
+        // now nextStep grid is the grid that we want to be displayed the next step
+        // therefore we need to swap the references
+        Grid temp = currentGrid;
+        currentGrid = nextStepGrid;
+        nextStepGrid = temp;
     }
 
     public void displayCurrentGrid() {
