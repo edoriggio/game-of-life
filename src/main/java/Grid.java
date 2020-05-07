@@ -35,6 +35,18 @@ public class Grid {
         }
     }
 
+    public void killAllCells() {
+        for (int row = 0; row <= rows; row++) {
+            for (int col = 0; col <= cols; col++) {
+                grid[row][col].kill();
+            }
+        }
+    }
+
+    public void put(Cell cell, int row, int col) {
+        grid[row][col] = cell;
+    }
+
     private boolean inRange(final int row, final int col) {
         return (row >= 0 && col >= 0 && col <= cols && row <= rows);
     }

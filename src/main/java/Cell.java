@@ -2,7 +2,7 @@ package src.main.java;
 
 public class Cell {
 
-    private final boolean alive;
+    private boolean alive;
 
     /**
      * Constructor for cells.
@@ -38,4 +38,8 @@ public class Cell {
     // public void setAlive(boolean alive) {
     //     this.alive = alive;
     // }
+
+    public void kill() {
+        alive = false;
+    }
 }
