@@ -15,6 +15,6 @@ class GridTest {
 
     //@org.junit.jupiter.api.Test
     void testGetNumberOfNeighbors() {
-        
+
     }
 }

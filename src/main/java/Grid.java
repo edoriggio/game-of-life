@@ -19,6 +19,20 @@ public class Grid {
 
         cols = col - 1;
         rows = row - 1;
+        randomlyPopulateGrid();
+    }
+
+    /**
+     * Randomly set each position of the grid to have an alive or dead cell.
+     */
+    private void randomlyPopulateGrid() {
+        int rand;
+        for (int row = 0; row <= rows; row++) {
+            for (int col = 0; col <= cols; col++) {
+                rand = (int)(Math.random()*10);
+                grid[row][col] = new Cell(rand >= 5 ? true : false);
+            }
+        }
     }
 
     private boolean inRange(final int row, final int col) {
@@ -84,6 +98,20 @@ public class Grid {
         for (int[] pair : getNeighbors(row, col)) {
             System.out.println(pair[0] + " " + pair[1]);
 
+        }
+    }
+
+    /**
+     * Print this Grid in the standard output.
+     */
+    public void printGrid() {
+        char toPrint;
+        for (int row = 0; row <= rows; row++) {
+            for (int col = 0; col <= cols; col++) {
+                toPrint = grid[row][col].isAlive() ? 'O' : 'X';
+                System.out.print(toPrint+" ");
+            }
+            System.out.println("");
         }
     }
 }

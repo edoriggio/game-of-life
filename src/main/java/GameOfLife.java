@@ -30,8 +30,11 @@ public class GameOfLife {
         nextStepGrid = temp;
     }
 
+    /**
+     * Print the current grid of the game in the standard output.
+     */
     public void displayCurrentGrid() {
-        // currentGrid.print()
+        currentGrid.printGrid();
     }
 
 }
