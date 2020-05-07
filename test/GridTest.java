@@ -23,6 +23,13 @@ public class GridTest {
         grid.put(new Cell(true), 5,5);
         assertEquals(grid.getNumberOfNeighbors(5,5), 0);
         assertEquals(grid.getNumberOfNeighbors(4,5), 1);
-
+        grid.put(new Cell(true), 4,5);
+        assertEquals(grid.getNumberOfNeighbors(5,5), 1);
+        grid.put(new Cell(true), 5,4);
+        assertEquals(grid.getNumberOfNeighbors(5,5), 2);
+        grid.put(new Cell(true), 6,5);
+        assertEquals(grid.getNumberOfNeighbors(5,5), 3);
+        grid.put(new Cell(true), 5,6);
+        assertEquals(grid.getNumberOfNeighbors(5,5), 4);
     }
 }
