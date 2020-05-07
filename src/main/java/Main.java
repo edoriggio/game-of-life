@@ -24,6 +24,12 @@ public class Main {
         model.displayCurrentGrid();
         final TextUserInterface tui = new TextUserInterface(model);
         tui.run();
+
+        Grid testGrid = new Grid(10,10);
+        test_grid.printGrid();
+        test_grid.room(1);
+        System.out.println("____");
+        test_grid.printGrid();
     }
 
 }

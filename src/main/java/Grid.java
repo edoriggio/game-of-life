@@ -7,8 +7,8 @@ public class Grid {
     private Cell[][] grid;
     private final int[] rule_row;
     private final int[] rule_col;
-    private final int rows;
-    private final int cols;
+    private int rows;
+    private int cols;
 
     public Grid(int row, int col) {
         grid = new Cell[row][col];
@@ -116,6 +116,45 @@ public class Grid {
         // that means for each position in this grid, compute the number
         // of neighbors and depending of this number chose if the new cell must
         // die/stay alive/live
+    }
+
+    public void room(int zoom) {
+        if (zoom > 0) {
+            zoomOutBy(zoom);
+        } else if (zoom < 0) {
+            zoomInBy(zoom);
+        } else {
+            //if zoom 0 do nothing
+            return;
+        }
+    }
+
+    //TODO bugged if zoom greater than 1
+    // lowest rows are not copied
+    private void zoomOutBy(int zoom) {
+        int nextRowSize = rows+1 + 2*zoom;
+        int nextColSize = cols+1 + 2*zoom;
+        Cell[][] newGrid = new Cell[nextRowSize][nextColSize];
+        // copy old grid into the new one with the offset of the zoom
+        for (int row = 0; row < nextRowSize; row++) {
+            for (int col = 0; col < nextColSize; col++) {
+                //if we are in the new area being created, just put a dead Cell
+                if (row < zoom || col < zoom || row > rows+1 || col > cols+1) {
+                    //System.out.println("OUT "+row+" "+col);
+                    newGrid[row][col] = new Cell(false);
+                } else {
+                    // otherwise copy the old grid
+                    newGrid[row][col] = grid[row-zoom][col-zoom];
+                }
+            }
+        }
+        grid = newGrid;
+        rows = nextRowSize-1;
+        cols = nextColSize-1;
+    }
+
+    private void zoomInBy(int zoom) {
+        //TODO implement zoom-in
     }
 
     /**
