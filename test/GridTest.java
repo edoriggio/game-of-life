@@ -32,4 +32,17 @@ public class GridTest {
         grid.put(new Cell(true), 5,6);
         assertEquals(grid.getNumberOfNeighbors(5,5), 4);
     }
+
+    @Test
+    public void testZoom() {
+        Grid grid = new Grid(10,10);
+        assertEquals(grid.getRowNumber(), 10);
+        grid.zoom(1);
+        // if you zoom by 1, you get 2 extra rows
+        assertEquals(grid.getRowNumber(), 12);
+        assertEquals(grid.getColNumber(), 12);
+        grid.zoom(2);
+        assertEquals(grid.getRowNumber(), 16);
+        assertEquals(grid.getColNumber(), 16);
+    }
 }

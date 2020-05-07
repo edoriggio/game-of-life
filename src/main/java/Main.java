@@ -27,7 +27,7 @@ public class Main {
 
         Grid testGrid = new Grid(10,10);
         test_grid.printGrid();
-        test_grid.room(1);
+        test_grid.zoom(1);
         System.out.println("____");
         test_grid.printGrid();
     }

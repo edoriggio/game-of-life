@@ -22,6 +22,14 @@ public class Grid {
         randomlyPopulateGrid();
     }
 
+    public int getRowNumber() {
+        return rows+1;
+    }
+
+    public int getColNumber() {
+        return cols+1;
+    }
+
     /**
      * Randomly set each position of the grid to have an alive or dead cell.
      */
@@ -118,7 +126,7 @@ public class Grid {
         // die/stay alive/live
     }
 
-    public void room(int zoom) {
+    public void zoom(int zoom) {
         if (zoom > 0) {
             zoomOutBy(zoom);
         } else if (zoom < 0) {
