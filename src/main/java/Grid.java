@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Grid {
-    private Cell[][] grid;
+    private final Cell[][] grid;
     private final int[] rule_row;
     private final int[] rule_col;
     private final int rows;
@@ -30,7 +30,7 @@ public class Grid {
         for (int row = 0; row <= rows; row++) {
             for (int col = 0; col <= cols; col++) {
                 rand = (int)(Math.random()*10);
-                grid[row][col] = new Cell(rand >= 5 ? true : false);
+                grid[row][col] = new Cell(rand >= 5);
             }
         }
     }
@@ -75,6 +75,7 @@ public class Grid {
                 }
             }
         }
+
         return counter;
     }
 
@@ -111,7 +112,8 @@ public class Grid {
                 toPrint = (grid[row][col] != null && grid[row][col].isAlive()) ? 'O' : 'X';
                 System.out.print(toPrint+" ");
             }
-            System.out.println("");
+
+            System.out.println();
         }
     }
 }

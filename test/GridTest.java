@@ -1,20 +1,13 @@
 package test;
 
-//import static org.junit.jupiter.api.Assertions.*;
+import src.main.java.Grid;
+import org.junit.Test;
 
-class GridTest {
+public class GridTest {
 
-    //@org.junit.jupiter.api.BeforeEach
-    void setUp() {
-
-    }
-
-    //@org.junit.jupiter.api.AfterEach
-    void tearDown() {
-    }
-
-    //@org.junit.jupiter.api.Test
-    void testGetNumberOfNeighbors() {
-
+    @Test
+    public void testSomething() {
+        Grid grid = new Grid(1, 2);
+        //...
     }
 }
