@@ -39,6 +39,9 @@ public class Cell {
     //     this.alive = alive;
     // }
 
+    /**
+     * Kill this cell.
+     */
     public void kill() {
         alive = false;
     }

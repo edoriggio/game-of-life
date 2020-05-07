@@ -35,6 +35,9 @@ public class Grid {
         }
     }
 
+    /**
+     * Make all cells in the grid die.
+     */
     public void killAllCells() {
         for (int row = 0; row <= rows; row++) {
             for (int col = 0; col <= cols; col++) {
@@ -43,10 +46,23 @@ public class Grid {
         }
     }
 
-    public void put(Cell cell, int row, int col) {
+    /**
+     * Put the given Cell at the given position.
+     * @param cell the cell to put
+     * @param row the row where to put the Cell
+     * @param col the column where to put the Cell
+     */
+    public void put(final Cell cell, final int row, final int col) {
         grid[row][col] = cell;
     }
 
+    /**
+     * Checks whether the given position is a valid position for this grid, meaning that
+     * it is not out of bounds.
+     * @param row the row of the position to check
+     * @param col the column of the position to check
+     * @return true if the position is valid, false otherwise.
+     */
     private boolean inRange(final int row, final int col) {
         return (row >= 0 && col >= 0 && col <= cols && row <= rows);
     }
