@@ -20,7 +20,7 @@ public class Main {
         test_grid.printNeighbors(0,0);
         System.out.println("__");
 
-        final GameOfLife model = new GameOfLife(10, 10);
+        final GameOfLife model = new GameOfLife(10, 20);
         model.displayCurrentGrid();
         final TextUserInterface tui = new TextUserInterface(model);
         tui.run();

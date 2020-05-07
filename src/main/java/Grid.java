@@ -108,7 +108,7 @@ public class Grid {
         char toPrint;
         for (int row = 0; row <= rows; row++) {
             for (int col = 0; col <= cols; col++) {
-                toPrint = grid[row][col].isAlive() ? 'O' : 'X';
+                toPrint = (grid[row][col] != null && grid[row][col].isAlive()) ? 'O' : 'X';
                 System.out.print(toPrint+" ");
             }
             System.out.println("");
