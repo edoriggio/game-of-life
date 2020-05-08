@@ -147,7 +147,7 @@ public class Grid {
         for (int row = 0; row < nextRowSize; row++) {
             for (int col = 0; col < nextColSize; col++) {
                 //if we are in the new area being created, just put a dead Cell
-                if (row < zoom || col < zoom || row > rows+1 || col > cols+1) {
+                if (row < zoom || col < zoom || row > rows+2 || col > cols+2) {
                     //System.out.println("OUT "+row+" "+col);
                     newGrid[row][col] = new Cell(false);
                 } else {

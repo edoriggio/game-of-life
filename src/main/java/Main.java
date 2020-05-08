@@ -25,11 +25,11 @@ public class Main {
         final TextUserInterface tui = new TextUserInterface(model);
         tui.run();
 
-        Grid testGrid = new Grid(10,10);
-        test_grid.printGrid();
-        test_grid.zoom(1);
+        Grid testGridZoom = new Grid(5,5);
+        testGridZoom.printGrid();
+        testGridZoom.zoom(2);
         System.out.println("____");
-        test_grid.printGrid();
+        testGridZoom.printGrid();
     }
 
 }
