@@ -2,4 +2,29 @@ package src.main;
 
 public class Cell {
 
+    private State state;
+
+    /**
+     * Constructor of the class Cell.
+     * @param state The state of the cell
+     */
+    public Cell(State state) {
+        this.state = state;
+    }
+
+    /**
+     * Given a state, change the current state of the Cell.
+     * @param state The new state of the Cell
+     */
+    public void setState(State state) {
+        this.state = state;
+    }
+
+    /**
+     * Get the current state of a Cell.
+     * @return The state of the Cell
+     */
+    public State getState() {
+        return this.state;
+    }
 }
