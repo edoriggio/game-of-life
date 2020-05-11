@@ -1,8 +1,8 @@
-package src.test;
+package src.test.java;
 
 import org.junit.Test;
-import src.main.Cell;
-import src.main.State;
+import src.main.java.Cell;
+import src.main.java.State;
 
 import static org.junit.Assert.*;
 
@@ -21,5 +21,4 @@ public class CellTest {
         cell.setState(State.ALIVE);
         assertEquals(State.ALIVE, cell.getState());
     }
-
 }

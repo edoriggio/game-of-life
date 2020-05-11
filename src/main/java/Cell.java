@@ -1,4 +1,4 @@
-package src.main;
+package src.main.java;
 
 public class Cell {
 
@@ -8,7 +8,7 @@ public class Cell {
      * Constructor of the class Cell.
      * @param state The state of the cell
      */
-    public Cell(State state) {
+    public Cell(final State state) {
         this.state = state;
     }
 
@@ -16,7 +16,7 @@ public class Cell {
      * Given a state, change the current state of the Cell.
      * @param state The new state of the Cell
      */
-    public void setState(State state) {
+    public void setState(final State state) {
         this.state = state;
     }
 

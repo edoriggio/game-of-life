@@ -2,9 +2,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>ch.usi.pf2</groupId>
-    <artifactId>project</artifactId>
+    <artifactId>project-gameoflife</artifactId>
     <version>0.1-SNAPSHOT</version>
-    <url></url>
+    <url/>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -165,7 +165,7 @@
                 <version>3.0.1</version>
                 <configuration>
                     <encoding>UTF-8</encoding>
-                    <additionalparam>-Xdoclint:none</additionalparam>
+                    <doclint>none</doclint>
                     <failOnError>false</failOnError>
                 </configuration>
                 <reportSets>
@@ -253,27 +253,9 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>RELEASE</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>RELEASE</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>RELEASE</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
