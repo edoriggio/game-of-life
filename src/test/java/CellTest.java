@@ -21,4 +21,5 @@ public class CellTest {
         cell.setState(State.ALIVE);
         assertEquals(State.ALIVE, cell.getState());
     }
+    
 }
