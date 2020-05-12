@@ -2,7 +2,7 @@ package src.main.java;
 
 import java.util.LinkedList;
 
-public class MooreNeighborhood extends Neighborhood{
+public class MooreNeighborhood extends Neighborhood {
 
     int[] rowRule;
     int[] colRule;
@@ -24,7 +24,7 @@ public class MooreNeighborhood extends Neighborhood{
         int currentRow;
         int currentCol;
         int[] currentPosition;
-        for (int k = 0; k < rowRule.length; k++){
+        for (int k = 0; k < rowRule.length; k++) {
             currentRow = i + rowRule[k];
             currentCol = j + colRule[k];
 
@@ -36,10 +36,16 @@ public class MooreNeighborhood extends Neighborhood{
         return listOfNeighbouringPositions;
     }
 
+    /**
+     * Print all the neighbors of the given position in the given grid according to the border rule of this.
+     * @param grid the grid containing the position
+     * @param i the index of the row
+     * @param j the index of the column
+     */
     public void printNeighbors(final Grid grid, final int i, final int j) {
         LinkedList<int[]> toPrint = getNeighbors(grid, i, j);
         for (int[] position : toPrint) {
-            System.out.println(""+position[0]+" "+position[1]);
+            System.out.println("" + position[0] + " " + position[1]);
         }
     }
 

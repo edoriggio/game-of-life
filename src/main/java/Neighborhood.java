@@ -19,7 +19,7 @@ public abstract class Neighborhood {
      * @param grid the grid in which the neighbouring positions are being looked for
      * @param i the index for the row of the postion
      * @param j the index for the columns of the position
-     * @return a LinkedList<int[]> of neighbouring positions
+     * @return a LinkedList< int[] > of neighbouring positions
      */
     public abstract LinkedList<int[]> getNeighbors(Grid grid, int i, int j);
 }
