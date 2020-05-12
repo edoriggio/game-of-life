@@ -1,8 +1,8 @@
 package src.main.java;
 
 /**
- * The Grid class is used to create a bi-dimensional array
- * where cells are stored.
+ * The Grid class is used to create a bi-dimensional array.
+ * This array is composed of cells.
  */
 public class Grid {
 
@@ -49,7 +49,7 @@ public class Grid {
     public void printGrid() {
         for (int row = 0; row < rows; row++) {
             for (int column = 0; column < columns; column++) {
-                System.out.print(grid[row][column].giveString() + " ");
+                System.out.print(grid[row][column].getState() + " ");
             }
             System.out.println();
         }

@@ -1,7 +1,8 @@
 package src.main.java;
 
 /**
- *
+ * A cell is the most basic block of the Game of Life.
+ * This cell has a status and can interact with neighboring cells.
  */
 public class Cell {
 
@@ -27,15 +28,8 @@ public class Cell {
      * Get the current state of a Cell.
      * @return The state of the Cell
      */
-    public State getState() {
-        return this.state;
+    public String getState() {
+        return this.state.getName();
     }
 
-    public String giveString() {
-        if (this.state == State.ALIVE) {
-            return "X";
-        } else {
-            return "O";
-        }
-    }
 }

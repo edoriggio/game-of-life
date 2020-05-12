@@ -11,23 +11,17 @@ public class CellTest {
     @Test
     public void testGetState() {
         Cell cell = new Cell(State.ALIVE);
-        assertEquals(State.ALIVE, cell.getState());
+        assertEquals("alive", cell.getState());
+        Cell cell2 = new Cell(State.DEAD);
+        assertEquals("dead", cell2.getState());
     }
 
     @Test
     public void testSetState() {
         Cell cell = new Cell(State.DEAD);
-        assertEquals(State.DEAD, cell.getState());
+        assertEquals("dead", cell.getState());
         cell.setState(State.ALIVE);
-        assertEquals(State.ALIVE, cell.getState());
-    }
-
-    @Test
-    public void testGiveString() {
-        Cell cell = new Cell(State.DEAD);
-        assertEquals("O", cell.giveString());
-        Cell cell2 = new Cell(State.ALIVE);
-        assertEquals("X", cell2.giveString());
+        assertEquals("alive", cell.getState());
     }
 
 }
