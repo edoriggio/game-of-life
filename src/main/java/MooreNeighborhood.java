@@ -36,6 +36,13 @@ public class MooreNeighborhood extends Neighborhood{
         return listOfNeighbouringPositions;
     }
 
+    public void printNeighbors(final Grid grid, final int i, final int j) {
+        LinkedList<int[]> toPrint = getNeighbors(grid, i, j);
+        for (int[] position : toPrint) {
+            System.out.println(""+position[0]+" "+position[1]);
+        }
+    }
+
 
 
 
