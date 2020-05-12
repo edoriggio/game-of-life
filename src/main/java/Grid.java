@@ -6,7 +6,7 @@ package src.main.java;
  */
 public class Grid {
 
-    private final Cell[][] grid;
+    public final Cell[][] grid;
     private final int rows;
     private final int columns;
 

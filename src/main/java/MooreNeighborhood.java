@@ -6,6 +6,12 @@ public class MooreNeighborhood extends Neighborhood{
 
     int[] rowRule;
     int[] colRule;
+
+    /**
+     * Constructor for the MooreNeighborhood class.
+     * This Neighborhood considers as neighbors all 8 cells next to the given one.
+     * @param rule the bordering rule that this neighborhood has to follow.
+     */
     public MooreNeighborhood(BorderRule rule) {
         super(rule);
         rowRule = new int[]{-1, +1, 0, 0, -1, -1, +1, +1};
@@ -29,6 +35,8 @@ public class MooreNeighborhood extends Neighborhood{
         }
         return listOfNeighbouringPositions;
     }
+
+
 
 
 }
