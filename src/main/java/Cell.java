@@ -1,5 +1,8 @@
 package src.main.java;
 
+/**
+ *
+ */
 public class Cell {
 
     private State state;
@@ -26,5 +29,13 @@ public class Cell {
      */
     public State getState() {
         return this.state;
+    }
+
+    public String giveString() {
+        if (this.state == State.ALIVE) {
+            return "X";
+        } else {
+            return "O";
+        }
     }
 }

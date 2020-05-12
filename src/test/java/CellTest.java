@@ -21,5 +21,13 @@ public class CellTest {
         cell.setState(State.ALIVE);
         assertEquals(State.ALIVE, cell.getState());
     }
-    
+
+    @Test
+    public void testGiveString() {
+        Cell cell = new Cell(State.DEAD);
+        assertEquals("O", cell.giveString());
+        Cell cell2 = new Cell(State.ALIVE);
+        assertEquals("X", cell2.giveString());
+    }
+
 }
