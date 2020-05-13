@@ -37,4 +37,29 @@ public class MooreNeighborhoodTest {
         // South-east
         assertTrue(Arrays.equals(neighbors.get(7), new int[]{1, 1}));
     }
+
+    @Test
+    public void testCentralPosition() {
+        BorderRule borderRule = new TorusRule();
+        Neighborhood moore = new MooreNeighborhood(borderRule);
+        Grid grid = new Grid(10,10);
+        LinkedList<int[]> neighbors = moore.getNeighbors(grid, 5,5);
+
+        // North
+        assertTrue(Arrays.equals(neighbors.get(0), new int[]{4, 5}));
+        // South
+        assertTrue(Arrays.equals(neighbors.get(1), new int[]{6, 5}));
+        // East
+        assertTrue(Arrays.equals(neighbors.get(2), new int[]{5, 6}));
+        // West
+        assertTrue(Arrays.equals(neighbors.get(3), new int[]{5, 4}));
+        // North-West
+        assertTrue(Arrays.equals(neighbors.get(4), new int[]{4, 4}));
+        // North-east
+        assertTrue(Arrays.equals(neighbors.get(5), new int[]{4, 6}));
+        // South-west
+        assertTrue(Arrays.equals(neighbors.get(6), new int[]{6, 4}));
+        // South-east
+        assertTrue(Arrays.equals(neighbors.get(7), new int[]{6, 6}));
+    }
 }
