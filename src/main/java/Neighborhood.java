@@ -2,6 +2,10 @@ package src.main.java;
 
 import java.util.LinkedList;
 
+/**
+ * A Neighborhood is a way to specify all neighboring positions of a given position inside a Grid
+ * according to a specific ( a concrete class ) BorderRule.
+ */
 public abstract class Neighborhood {
     protected final BorderRule rule;
 

@@ -1,5 +1,9 @@
 package src.main.java;
 
+/**
+ * This BorderRule represents the grid as if it has a torus shape, meaning that the first row
+ * is neighboring the last row and the first column is neighboring the last column.
+ */
 public class TorusRule extends BorderRule {
 
     @Override

@@ -1,5 +1,9 @@
 package src.main.java;
 
+/**
+ * A BorderRule defines how a certain position, that might be outside of the bounds of a grid
+ * gets redirected into a new position that actually is in bound.
+ */
 public abstract class BorderRule {
 
     /**
