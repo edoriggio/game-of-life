@@ -11,7 +11,8 @@ public abstract class BorderRule {
      * @param grid the grid containing the position
      * @param i the index of the row
      * @param j the index of the column
-     * @return the same j,i if is a valid position according to the rule, the corrected position otherwise
+     * @return the same j,i if is a valid position according to the rule,
+     *         the corrected position otherwise
      */
     public abstract int[] validate(Grid grid, int i, int j);
 }

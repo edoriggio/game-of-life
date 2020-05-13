@@ -4,7 +4,8 @@ import java.util.LinkedList;
 
 /**
  * This Neighborhood represents the Moore rule, for that a cell in a grid has 8 neighboring cells
- * that creates a square around that cell. This type of neighbouring rule is the one used for the Game Of Life.
+ * that creates a square around that cell. This type of neighbouring rule is the one used for the
+ * Game Of Life.
  */
 public class MooreNeighborhood extends Neighborhood {
 
@@ -41,7 +42,8 @@ public class MooreNeighborhood extends Neighborhood {
     }
 
     /**
-     * Print all the neighbors of the given position in the given grid according to the border rule of this.
+     * Print all the neighbors of the given position in the given grid according to the border
+     * rule of this.
      * @param grid the grid containing the position
      * @param i the index of the row
      * @param j the index of the column
