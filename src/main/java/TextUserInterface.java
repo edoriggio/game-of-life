@@ -1,5 +1,7 @@
 package src.main.java;
 
+import java.util.Scanner;
+
 /**
  * ...
  */
@@ -20,7 +22,23 @@ public class TextUserInterface {
      * Run the application.
      */
     public void run() {
-        System.out.println("Welcome to " + model.toString());
+        Scanner sc = new Scanner(System.in);
+        boolean flag = true;
+
+        while (flag) {
+            String command = sc.nextLine();
+            if (command.equals("step")) {
+                model.step();
+                model.getCurrentGrid().printGrid();
+            }
+            else if ( command.equals("exit")) {
+                flag = false;
+            } else {
+                flag = false;
+                break;
+            }
+
+        }
     }
 
 }

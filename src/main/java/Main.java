@@ -15,17 +15,12 @@ public class Main {
      */
     public static void main(final String[] args) {
 
-        final GameOfLife model = new GameOfLife();
+        final GameOfLife model = new GameOfLife(10, 10);
 
         final TextUserInterface tui = new TextUserInterface(model);
         tui.run();
 
-        Grid testGrid1 = new Grid(10,20);
-        BorderRule rule = new TorusRule();
-        MooreNeighborhood moore = new MooreNeighborhood(rule);
-        moore.printNeighbors(testGrid1, 5,5);
-        System.out.println("");
-        moore.printNeighbors(testGrid1, 0,0);
+
 
     }
 
