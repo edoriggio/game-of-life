@@ -2,6 +2,11 @@ package src.main.java;
 
 import java.util.LinkedList;
 
+/**
+ * This class computes the next status of a Grid of cells given a Neigborhood instance
+ * to compute the neighbourhood of each cell according to the rules of that instance.
+ * The next state of each Cell is instead computed according to the Game of Life rules.
+ */
 public class Compute {
 
     /**
