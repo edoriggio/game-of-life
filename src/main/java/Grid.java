@@ -57,10 +57,12 @@ public class Grid {
     public void printGrid() {
         for (int row = 0; row < rows; row++) {
             for (int column = 0; column < columns; column++) {
-                System.out.print(grid[row][column].getState() + " ");
+                System.out.print(grid[row][column].getState() == State.DEAD ? "X" : "O");
+                System.out.print(" ");
             }
             System.out.println();
         }
+        System.out.println();
     }
 
 }
