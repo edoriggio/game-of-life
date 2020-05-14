@@ -28,8 +28,8 @@ public class Cell {
      * Get the current state of a Cell.
      * @return The state of the Cell
      */
-    public String getState() {
-        return this.state.getName();
+    public State getState() {
+        return this.state;
     }
 
 }

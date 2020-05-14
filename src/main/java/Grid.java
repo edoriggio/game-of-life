@@ -27,6 +27,14 @@ public class Grid {
         }
     }
 
+    public Cell getCell(int i, int j) {
+        if (i < rows && j < columns) {
+            return grid[i][j];
+        } else {
+            return null;
+        }
+    }
+
     /**
      * Getter for the number of rows of a grid.
      * @return The number of rows
