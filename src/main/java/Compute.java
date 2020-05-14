@@ -7,7 +7,7 @@ import java.util.LinkedList;
  * to compute the neighbourhood of each cell according to the rules of that instance.
  * The next state of each Cell is instead computed according to the Game of Life rules.
  */
-public class gCompute {
+public class Compute {
 
     /**
      * Update the second Grid that has been given according to the status of the fist one given.
