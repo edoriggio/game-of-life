@@ -8,11 +8,17 @@ import src.main.java.*;
 import static org.junit.Assert.*;
 
 public class ComputeTest {
+
     Grid grid1;
     Grid grid2;
     BorderRule torus;
     Neighborhood moore;
 
+    /**
+     * Set up the first grid to be empty ( only DEAD cells ).
+     * Initialize BorderRule for the Neighbouring rule
+     * Initialize NeighbouringRule for the class Compute
+     */
     @Before
     public void setUpEmptyGrids() {
         grid1 = new Grid(10, 10);
@@ -28,6 +34,9 @@ public class ComputeTest {
         System.out.println("Set up test grids..");
     }
 
+    /**
+     * Clean up everything in grid1, so that for the next method, grid1 only has DEAD cells.
+     */
     @After
     public void cleanUp() {
         for (int i = 0; i < grid1.getRows(); i++ ) {
@@ -106,7 +115,7 @@ public class ComputeTest {
     // _________________ TESTING OSCILLATOR SHAPES ______________________
 
     @Test
-    public void testBlinkedOscillator() {
+    public void testBlinkerOscillator() {
         grid1.getCell(4,4).setState(State.ALIVE);
         grid1.getCell(4,5).setState(State.ALIVE);
         grid1.getCell(4,6).setState(State.ALIVE);
