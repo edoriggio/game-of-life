@@ -51,12 +51,14 @@ public class ComputeTest {
         }
         //grid2.printGrid();
     }
+    // _________________ TESTING STABLE SHAPES ______________________
     /*
-        Testing that a stable shape stays like that
+        Testing that a stable shape stays like that:
+        From Wikipedia "Still lifes of the Game of Life" : "Block"
      */
     @Test
     public void testStableGridBlock() {
-        // From Wikipedia Still lifes of the Game of Life: "Block"
+
         grid1.getCell(5,5).setState(State.ALIVE);
         grid1.getCell(5,6).setState(State.ALIVE);
         grid1.getCell(6,5).setState(State.ALIVE);
@@ -77,4 +79,55 @@ public class ComputeTest {
         }
 
     }
+
+    /*
+        Testing that a stable shape stays like that:
+        From Wikipedia "Still lifes of the Game of Life" : "Boat"
+     */
+    @Test
+    public void testStableGridBoat() {
+        grid1.getCell(4, 4).setState(State.ALIVE);
+        grid1.getCell(4, 3).setState(State.ALIVE);
+        grid1.getCell(5, 3).setState(State.ALIVE);
+        grid1.getCell(5, 5).setState(State.ALIVE);
+        grid1.getCell(6, 4).setState(State.ALIVE);
+        grid1.printGrid();
+
+        Compute.computeNextGrid(moore, grid1, grid2);
+        //grid2.printGrid();
+        assertTrue(grid2.getCell(4, 4).getState() == State.ALIVE);
+        assertTrue(grid2.getCell(4, 3).getState() == State.ALIVE);
+        assertTrue(grid2.getCell(5, 3).getState() == State.ALIVE);
+        assertTrue(grid2.getCell(5, 5).getState() == State.ALIVE);
+        assertTrue(grid2.getCell(6, 4).getState() == State.ALIVE);
+        // possibly add loop here to check the rest is dead as in the test above...
+    }
+
+    // _________________ TESTING OSCILLATOR SHAPES ______________________
+
+    @Test
+    public void testBlinkedOscillator() {
+        grid1.getCell(4,4).setState(State.ALIVE);
+        grid1.getCell(4,5).setState(State.ALIVE);
+        grid1.getCell(4,6).setState(State.ALIVE);
+
+        //                  X
+        //  X X X    ->     X
+        //                  X
+
+        Compute.computeNextGrid(moore, grid1, grid2);
+        assertTrue(grid2.getCell(3, 5).getState() == State.ALIVE);
+        assertTrue(grid2.getCell(4, 5).getState() == State.ALIVE);
+        assertTrue(grid2.getCell(5, 5).getState() == State.ALIVE);
+
+        //  X
+        //  X       ->     X X X
+        //  X
+
+        Compute.computeNextGrid(moore, grid2, grid1);
+        assertTrue(grid1.getCell(4, 4).getState() == State.ALIVE);
+        assertTrue(grid1.getCell(4, 5).getState() == State.ALIVE);
+        assertTrue(grid1.getCell(4, 6).getState() == State.ALIVE);
+    }
+
 }
