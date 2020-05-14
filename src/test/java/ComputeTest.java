@@ -130,4 +130,41 @@ public class ComputeTest {
         assertTrue(grid1.getCell(4, 6).getState() == State.ALIVE);
     }
 
+    @Test
+    public void testToadOscillator() {
+        grid1.getCell(3,3).setState(State.ALIVE);
+        grid1.getCell(3,4).setState(State.ALIVE);
+        grid1.getCell(3,5).setState(State.ALIVE);
+        grid1.getCell(4,2).setState(State.ALIVE);
+        grid1.getCell(4,3).setState(State.ALIVE);
+        grid1.getCell(4,4).setState(State.ALIVE);
+
+        //                     X
+        //    X X X     ->  X   X
+        //  X X X           X   X
+        //                   X
+        Compute.computeNextGrid(moore, grid1, grid2);
+
+        assertTrue(grid2.getCell(5, 3).getState() == State.ALIVE);
+        assertTrue(grid2.getCell(4, 2).getState() == State.ALIVE);
+        assertTrue(grid2.getCell(3, 2).getState() == State.ALIVE);
+        assertTrue(grid2.getCell(4, 5).getState() == State.ALIVE);
+        assertTrue(grid2.getCell(3, 5).getState() == State.ALIVE);
+        assertTrue(grid2.getCell(2, 4).getState() == State.ALIVE);
+
+        //     X
+        //  X   X     ->     X X X
+        //  X   X          X X X
+        //   X
+
+        Compute.computeNextGrid(moore, grid2, grid1);
+        assertTrue(grid1.getCell(3, 3).getState() == State.ALIVE);
+        assertTrue(grid1.getCell(3, 4).getState() == State.ALIVE);
+        assertTrue(grid1.getCell(3, 5).getState() == State.ALIVE);
+        assertTrue(grid1.getCell(4, 2).getState() == State.ALIVE);
+        assertTrue(grid1.getCell(4, 3).getState() == State.ALIVE);
+        assertTrue(grid1.getCell(4, 4).getState() == State.ALIVE);
+
+    }
+
 }
