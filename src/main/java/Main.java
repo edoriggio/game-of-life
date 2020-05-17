@@ -1,12 +1,18 @@
 package src.main.java;
 
+import javax.swing.*;
+
 /**
  *
  */
-public class Main {
+public class Main extends JFrame {
 
     private Main() {
-        // never instantiated
+        final GameOfLife game = new GameOfLife(10, 10);
+        final Grid grid = game.getCurrentGrid();
+        GridGui xyz = new GridGui(grid, 30);
+        add(xyz);
+        pack();
     }
 
     /**
@@ -15,13 +21,7 @@ public class Main {
      */
     public static void main(final String[] args) {
 
-        final GameOfLife model = new GameOfLife(10, 10);
-
-        final TextUserInterface tui = new TextUserInterface(model);
-        tui.run();
-
-
+        new Main().setVisible(true);
 
     }
-
 }

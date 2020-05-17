@@ -4,8 +4,8 @@ public class GameOfLife {
 
     private Grid grid1;
     private Grid grid2;
-    private BorderRule borderRule;
-    private Neighborhood neighbourRule;
+    private final BorderRule borderRule;
+    private final Neighborhood neighbourRule;
 
     public GameOfLife(int rows, int cols) {
         grid1 = new Grid(rows, cols);
@@ -13,7 +13,6 @@ public class GameOfLife {
         borderRule = new TorusRule();
         neighbourRule = new MooreNeighborhood(borderRule);
         randomlyPopulate();
-
     }
 
     private void randomlyPopulate() {

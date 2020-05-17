@@ -54,8 +54,4 @@ public class MooreNeighborhood extends Neighborhood {
             System.out.println("" + position[0] + " " + position[1]);
         }
     }
-
-
-
-
 }
