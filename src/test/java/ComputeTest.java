@@ -176,4 +176,48 @@ public class ComputeTest {
 
     }
 
+    // _________________ TESTING SPACESHIPS SHAPES ______________________
+
+    @Test
+    public void testGlider() {
+        grid1.getCell(0,2).setState(State.ALIVE);
+        grid1.getCell(1,2).setState(State.ALIVE);
+        grid1.getCell(2,2).setState(State.ALIVE);
+        grid1.getCell(1,0).setState(State.ALIVE);
+        grid1.getCell(2,1).setState(State.ALIVE);
+
+        // Step1
+        Compute.computeNextGrid(moore, grid1, grid2);
+        int[] step1_row = new int[]{2,2,1,0};
+        int[] step1_col = new int[]{1,2,3,1};
+        for (int i = 0; i < step1_row.length; i++) {
+            assertTrue(grid2.getCell(step1_row[i], step1_col[i]).getState() == State.ALIVE);
+        }
+
+        // Step 2
+        Compute.computeNextGrid(moore, grid2, grid1);
+        int[] step2_row = new int[]{0,1,2,2,2};
+        int[] step2_col = new int[]{2,3,3,2,1};
+        for (int i = 0; i < step1_row.length; i++) {
+            assertTrue(grid1.getCell(step2_row[i], step2_col[i]).getState() == State.ALIVE);
+        }
+        
+        // Step 3
+        Compute.computeNextGrid(moore, grid1, grid2);
+        int[] step3_row = new int[]{1,1,2,2,3};
+        int[] step3_col = new int[]{1,3,3,2,2};
+        for (int i = 0; i < step1_row.length; i++) {
+            assertTrue(grid2.getCell(step3_row[i], step3_col[i]).getState() == State.ALIVE);
+        }
+
+        // Step 4
+        Compute.computeNextGrid(moore, grid2, grid1);
+        int[] step4_row = new int[]{1,2,3,3,2};
+        int[] step4_col = new int[]{3,3,3,2,1};
+        for (int i = 0; i < step1_row.length; i++) {
+            assertTrue(grid1.getCell(step4_row[i], step4_col[i]).getState() == State.ALIVE);
+        }
+
+    }
+
 }
