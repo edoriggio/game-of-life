@@ -201,7 +201,7 @@ public class ComputeTest {
         for (int i = 0; i < step1_row.length; i++) {
             assertTrue(grid1.getCell(step2_row[i], step2_col[i]).getState() == State.ALIVE);
         }
-        
+
         // Step 3
         Compute.computeNextGrid(moore, grid1, grid2);
         int[] step3_row = new int[]{1,1,2,2,3};

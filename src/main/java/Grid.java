@@ -28,7 +28,7 @@ public class Grid {
     }
 
     public Cell getCell(int i, int j) {
-        if (i < rows && j < columns) {
+        if (i < rows && j < columns && i >= 0 && j >= 0) {
             return grid[i][j];
         } else {
             return null;
