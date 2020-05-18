@@ -1,34 +1,25 @@
 package src.main.java;
 
-import javax.swing.*;
-import java.awt.*;
-
 /**
  *
  */
-public class Main extends JFrame {
-
-    private Main() {
-        super("Game of Life");
-        displayGui();
-    }
+public class Main {
 
     /**
      * Run the application.
      * @param args the command line arguments
      */
-    public static void main(final String[] args) {
-        new Main();
-    }
+    public static void main(final String[] args) throws InterruptedException {
+        // Model
+        GameOfLife game = new GameOfLife(10, 10);
 
-    public void displayGui() {
-        Container content = getContentPane();
-        final GameOfLife game = new GameOfLife(10, 10);
-        final Grid grid = game.getCurrentGrid();
-        final GridGui gui = new GridGui(grid, 30);
-        content.add(gui);
+        // GUI
+        MainFrame frame = new MainFrame(game, 30);
+        frame.setVisible(true);
 
-        pack();
-        setVisible(true);
+        for (int i = 0; i < 10; i++) {
+            game.step();
+            Thread.sleep(1000);
+        }
     }
 }

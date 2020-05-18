@@ -29,7 +29,7 @@ public class TextUserInterface {
             if (command.equals("step")) {
                 model.step();
                 model.getCurrentGrid().printGrid();
-            } else if ( command.equals("exit")) {
+            } else if (command.equals("exit")) {
                 flag = false;
             } else {
                 flag = false;

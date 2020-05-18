@@ -1,17 +1,21 @@
 package src.main.java;
 
+import java.util.ArrayList;
+
 public class GameOfLife {
 
     private Grid grid1;
     private Grid grid2;
     private final BorderRule borderRule;
     private final Neighborhood neighbourRule;
+    private final ArrayList<GameOfLifeListener> listeners;
 
     public GameOfLife(int rows, int cols) {
         grid1 = new Grid(rows, cols);
         grid2 = new Grid(rows, cols);
         borderRule = new TorusRule();
         neighbourRule = new MooreNeighborhood(borderRule);
+        this.listeners = new ArrayList<>();
         randomlyPopulate();
     }
 
@@ -32,5 +36,16 @@ public class GameOfLife {
         Grid temp = grid1;
         grid1 = grid2;
         grid2 = temp;
+        notifyGridChanged();
+    }
+
+    public void addGameOfLifeListener(final GameOfLifeListener listener) {
+        this.listeners.add(listener);
+    }
+
+    public void notifyGridChanged() {
+        for (GameOfLifeListener listener : listeners) {
+            listener.gridChanged();
+        }
     }
 }
