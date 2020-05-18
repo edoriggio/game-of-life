@@ -9,7 +9,6 @@ public class TextUserInterface {
 
     private final GameOfLife model;
 
-
     /**
      * Create a new TUI operating on the given Model.
      * @param model The model of this application
@@ -30,15 +29,12 @@ public class TextUserInterface {
             if (command.equals("step")) {
                 model.step();
                 model.getCurrentGrid().printGrid();
-            }
-            else if ( command.equals("exit")) {
+            } else if (command.equals("exit")) {
                 flag = false;
             } else {
                 flag = false;
                 break;
             }
-
         }
     }
-
 }
