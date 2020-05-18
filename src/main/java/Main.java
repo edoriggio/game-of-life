@@ -11,10 +11,10 @@ public class Main {
      */
     public static void main(final String[] args) throws InterruptedException {
         // Model
-        GameOfLife game = new GameOfLife(30, 40);
+        GameOfLife game = new GameOfLife(50, 50);
 
         // GUI
-        MainFrame frame = new MainFrame(game, 30);
+        MainFrame frame = new MainFrame(game, 10);
         frame.setVisible(true);
 
         for (int i = 0; i < 2000; i++) {
