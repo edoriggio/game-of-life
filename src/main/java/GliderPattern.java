@@ -2,6 +2,10 @@ package src.main.java;
 
 public class GliderPattern extends PatternFactory{
 
+    /**
+     * Constructor for a GliderPattern.
+     * @param rule the BorderRule to be applied
+     */
     public GliderPattern(BorderRule rule) {
         super(4,3, rule);
         rowPositions = new int[]{0,1,1,2,2};
@@ -19,6 +23,10 @@ public class GliderPattern extends PatternFactory{
     public boolean insertPattern(Grid grid, int i, int j) {
         // if there's not enough space
         if (grid.getRows() < this.rowsNeeded || grid.getColumns() < this.colsNeeded) {
+            return false;
+        }
+
+        if (i < 0 || j < 0 || i >= grid.getRows() || j >= grid.getColumns()) {
             return false;
         }
         for (int k = 0; k < rowPositions.length; k++) {
