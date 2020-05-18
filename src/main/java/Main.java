@@ -17,9 +17,9 @@ public class Main {
         MainFrame frame = new MainFrame(game, 30);
         frame.setVisible(true);
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 100; i++) {
             game.step();
-            Thread.sleep(1000);
+            Thread.sleep(250);
         }
     }
 }

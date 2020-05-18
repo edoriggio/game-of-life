@@ -16,7 +16,8 @@ public class GameOfLife {
         borderRule = new TorusRule();
         neighbourRule = new MooreNeighborhood(borderRule);
         this.listeners = new ArrayList<>();
-        randomlyPopulate();
+//        randomlyPopulate();
+        addGlider(0, 0);
     }
 
     private void randomlyPopulate() {
@@ -47,5 +48,11 @@ public class GameOfLife {
         for (GameOfLifeListener listener : listeners) {
             listener.gridChanged();
         }
+    }
+
+    public void addGlider(int i, int j) {
+        PatternFactory glider = new GliderPattern(borderRule);
+
+        glider.insertPattern(grid1, i, j);
     }
 }
