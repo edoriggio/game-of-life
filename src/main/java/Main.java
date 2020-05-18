@@ -1,6 +1,7 @@
 package src.main.java;
 
 import javax.swing.*;
+import java.awt.*;
 
 /**
  *
@@ -8,20 +9,26 @@ import javax.swing.*;
 public class Main extends JFrame {
 
     private Main() {
-        final GameOfLife game = new GameOfLife(10, 10);
-        final Grid grid = game.getCurrentGrid();
-        GridGui xyz = new GridGui(grid, 30);
-        add(xyz);
-        pack();
+        super("Game of Life");
+        displayGui();
     }
 
     /**
-     * Run the application (from the command line).
+     * Run the application.
      * @param args the command line arguments
      */
     public static void main(final String[] args) {
+        new Main();
+    }
 
-        new Main().setVisible(true);
+    public void displayGui() {
+        Container content = getContentPane();
+        final GameOfLife game = new GameOfLife(10, 10);
+        final Grid grid = game.getCurrentGrid();
+        final GridGui gui = new GridGui(grid, 30);
+        content.add(gui);
 
+        pack();
+        setVisible(true);
     }
 }

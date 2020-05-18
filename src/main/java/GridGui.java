@@ -8,12 +8,19 @@ public class GridGui extends JPanel {
     private final int rows;
     private final int cols;
     private final int squareSize;
+    final int[] dim;
 
     public GridGui(final Grid grid, final int squareSize) {
         this.grid = grid;
         this.rows = grid.getRows();
         this.cols = grid.getColumns();
         this.squareSize = squareSize;
+        this.dim = new int[2];
+
+        final int width = (cols * squareSize);
+        final int height = (rows * squareSize) + (rows);
+        dim[0] = width;
+        dim[1] = height;
     }
 
     public void paint(Graphics g) {
@@ -29,5 +36,9 @@ public class GridGui extends JPanel {
                 }
             }
         }
+    }
+
+    public int[] getDimensions() {
+        return dim;
     }
 }

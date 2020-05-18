@@ -33,6 +33,4 @@ public class GameOfLife {
         grid1 = grid2;
         grid2 = temp;
     }
-
-
 }
