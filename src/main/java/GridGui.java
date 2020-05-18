@@ -15,8 +15,8 @@ public class GridGui extends JPanel implements GameOfLifeListener {
         this.cols = gameOfLife.getCurrentGrid().getColumns();
         this.squareSize = squareSize;
 
-        final int width = (cols * squareSize);
-        final int height = (rows * squareSize);
+        final int width = (rows * squareSize);
+        final int height = (cols * squareSize);
 
         setPreferredSize(new Dimension(width, height));
 
