@@ -18,6 +18,9 @@ public class GameOfLife {
         this.listeners = new ArrayList<>();
 //        randomlyPopulate();
         addGlider(0, 0);
+        addGlider(5, 5);
+        addGlider(10, 10);
+        randomlyPopulate();
     }
 
     private void randomlyPopulate() {
