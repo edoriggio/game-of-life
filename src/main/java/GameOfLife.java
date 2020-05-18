@@ -17,10 +17,7 @@ public class GameOfLife {
         neighbourRule = new MooreNeighborhood(borderRule);
         this.listeners = new ArrayList<>();
 //        randomlyPopulate();
-        addGlider(0, 0);
-        addGlider(5, 5);
-        addGlider(10, 10);
-        randomlyPopulate();
+        addPuffer(20, 40);
     }
 
     private void randomlyPopulate() {
@@ -55,7 +52,11 @@ public class GameOfLife {
 
     public void addGlider(int i, int j) {
         PatternFactory glider = new GliderPattern(borderRule);
-
         glider.insertPattern(grid1, i, j);
+    }
+
+    public void addPuffer(int i, int j) {
+        PatternFactory puffer = new PufferPattern(borderRule);
+        puffer.insertPattern(grid1, i, j);
     }
 }

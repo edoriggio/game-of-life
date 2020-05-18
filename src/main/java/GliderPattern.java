@@ -7,12 +7,8 @@ public class GliderPattern extends PatternFactory{
      * @param rule the BorderRule to be applied
      */
     public GliderPattern(BorderRule rule) {
-        super(4,3, rule);
+        super(4, 3, rule);
         rowPositions = new int[]{0,1,1,2,2};
         colPositions = new int[]{2,0,2,2,1};
     }
-
-
-
-
 }

@@ -51,15 +51,15 @@ public class Compute {
      * Change the state of a Cell given the number of its neighbors that are Alive.
      * @param currentCell the current Cell with its current state.
      * @param cellToChange the cell which  will have the status changed.
-     * @param numerOfAliveCells the number of neighbours of the first cell given that are Alive.
+     * @param numberOfAliveCells the number of neighbours of the first cell given that are Alive.
      */
-    private static void changeStateAccordingToGameOfLifeRules(Cell currentCell, Cell cellToChange, int numerOfAliveCells) {
+    private static void changeStateAccordingToGameOfLifeRules(Cell currentCell, Cell cellToChange, int numberOfAliveCells) {
         // Any live cell with two or three live neighbours survives.
-        if (currentCell.getState() == State.ALIVE && ( numerOfAliveCells == 2 || numerOfAliveCells == 3)) {
+        if (currentCell.getState() == State.ALIVE && ( numberOfAliveCells == 2 || numberOfAliveCells == 3)) {
             cellToChange.setState(State.ALIVE);
         }
         // Any dead cell with three live neighbours becomes a live cell.
-        else if ( currentCell.getState() == State.DEAD && numerOfAliveCells == 3) {
+        else if ( currentCell.getState() == State.DEAD && numberOfAliveCells == 3) {
             cellToChange.setState(State.ALIVE);
         }
         // All other live cells die in the next generation. Similarly, all other dead cells stay dead.
