@@ -1,5 +1,10 @@
 package src.main.java;
 
+/**
+ * A definition of a GliderPattern.
+ * @author Michele Cattaneo
+ * @version 20.05.2020
+ */
 public class GliderPattern extends PatternFactory{
 
     /**

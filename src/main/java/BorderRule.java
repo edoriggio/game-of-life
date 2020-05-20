@@ -3,6 +3,9 @@ package src.main.java;
 /**
  * A BorderRule defines how a certain position, that might be outside of the bounds of a grid
  * gets redirected into a new position that actually is in bound.
+ *
+ * @author Michele Cattaneo
+ * @version 20.05.2020
  */
 public abstract class BorderRule {
 

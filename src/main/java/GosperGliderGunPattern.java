@@ -1,7 +1,16 @@
 package src.main.java;
 
+/**
+ * A definition of a Gosper Glider Gun pattern.
+ * @author Michele Cattaneo
+ * @version 20.05.2020
+ */
 public class GosperGliderGunPattern extends PatternFactory {
 
+    /**
+     * Constructor for the class GosperGliderGun.
+     * @param rule the BorderRule that is applied to this PatternFactory
+     */
     public GosperGliderGunPattern(BorderRule rule) {
         super(9,36, rule);
         rowPositions = new int[]{0 ,1 ,1 ,2 ,2 ,2 ,2 ,2 ,2 ,3 ,3 ,3 ,3 ,3 ,3 ,4 ,4 ,4 ,4 ,4 ,4 ,

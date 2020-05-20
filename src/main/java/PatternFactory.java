@@ -1,11 +1,22 @@
 package src.main.java;
 
+/**
+ * A PatternFactory is used generate a game of life pattern and add it to a Grid.
+ * Each subclass represents a specific pattern defined by two vectors ( arrays ) with the
+ * corresponding row and column positions of each cell, starting at position grid[0][0].
+ * rowPosition[k] gives the row index of the k-th cell while colPosition[k] the column position.
+ * This class also depends on a BorderRule instance to re-direct cells that would be otherwise out of
+ * bounds in the grid.
+ *
+ * @author Michele Cattaneo
+ * @version 20.05.2020
+ */
 public class PatternFactory {
     final int rowsNeeded;
     final int colsNeeded;
     int[] rowPositions;
     int[] colPositions;
-    BorderRule borderRule;
+    final BorderRule borderRule;
 
     /**
      * Constructor for a generic PatternFactory.
@@ -28,7 +39,7 @@ public class PatternFactory {
      * @param j the column position
      * @return true if the placing was successful, false otherwise
      */
-    public boolean insertPattern(Grid grid, int i, int j) {
+    public boolean insertPattern(final Grid grid, final int i, final int j) {
         // if there's not enough space
         if (grid.getRows() < this.rowsNeeded || grid.getColumns() < this.colsNeeded) {
             return false;
