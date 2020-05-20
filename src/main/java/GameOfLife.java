@@ -16,17 +16,7 @@ public class GameOfLife {
         borderRule = new TorusRule();
         neighbourRule = new MooreNeighborhood(borderRule);
         this.listeners = new ArrayList<>();
-<<<<<<< HEAD
-        randomlyPopulate();
-//        addPuffer(20, 40);
-=======
-//        randomlyPopulate();
-        //addGlider(0, 0);
-        //addGlider(5, 5);
-        //addGlider(10, 10);
-        //randomlyPopulate();
-        //addGun(0,0);
->>>>>>> cattami
+
     }
 
     private void randomlyPopulate() {
