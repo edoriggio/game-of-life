@@ -92,6 +92,14 @@ public class GameOfLife {
     }
 
     public void addPattern(final Pattern pattern, final int i, final int j) {
-        Insert.insertPattern(pattern, this.grid1, this.borderRule, i, j);
+        try {
+            Insert.insertPattern(pattern, this.grid1, this.borderRule, i, j);
+        }
+        catch (Exception e){
+            //System.out.println(e.toString());
+            MainFrame.showError(e.toString());
+        }
+
+
     }
 }

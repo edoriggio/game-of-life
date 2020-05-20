@@ -16,7 +16,8 @@ public class MainFrame extends JFrame {
 
         JButton randomButton = new JButton("Clear grid");
         panel.add(randomButton);
-
+        
+        this.setLocationRelativeTo(null);
         this.add(panel, BorderLayout.SOUTH);
         this.setJMenuBar(menu);
         this.add(gridGui);
@@ -30,5 +31,15 @@ public class MainFrame extends JFrame {
                 gameOfLife.clearGrid();
             }
         });
+
+
+    }
+
+    public static void showError(String error) {
+        Frame errorFrame = new JFrame();
+        errorFrame.setLocationRelativeTo(null);
+        errorFrame.add(new Label(error));
+        errorFrame.pack();
+        errorFrame.setVisible(true);
     }
 }
