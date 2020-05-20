@@ -14,6 +14,7 @@ public class Insert {
             case PUFFER:
                 PatternFactory puffer = new PufferPattern(borderRule);
                 puffer.insertPattern(grid, i, j);
+                break;
         }
     }
 }
