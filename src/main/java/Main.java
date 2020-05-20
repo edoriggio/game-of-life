@@ -11,7 +11,7 @@ public class Main {
      */
     public static void main(final String[] args) throws InterruptedException {
         // Model
-        GameOfLife game = new GameOfLife(20, 200);
+        GameOfLife game = new GameOfLife(80, 80);
 
         // GUI
         MainFrame frame = new MainFrame(game, 10);
@@ -21,7 +21,5 @@ public class Main {
             game.step();
             Thread.sleep(100);
         }
-
-
     }
 }
