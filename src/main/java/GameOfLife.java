@@ -21,7 +21,7 @@ public class GameOfLife {
         //addGlider(5, 5);
         //addGlider(10, 10);
         //randomlyPopulate();
-        addGun(0,0);
+        //addGun(0,0);
     }
 
     private void randomlyPopulate() {

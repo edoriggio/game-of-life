@@ -13,7 +13,7 @@ public class PatternFactory {
      * @param j the columns needed by the concrete Pattern
      * @param rule the BorderRule applied to the grid
      */
-    public PatternFactory(int i, int j, BorderRule rule) {
+     PatternFactory(int i, int j, BorderRule rule) {
         rowsNeeded = i;
         colsNeeded = j;
         borderRule = rule;

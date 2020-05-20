@@ -12,7 +12,7 @@ public class Compute {
     private Compute() {
         // Avoid that Compute might be instantiated
     }
-    
+
     /**
      * Update the second Grid that has been given according to the status of the fist one given.
      *
