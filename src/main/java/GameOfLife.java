@@ -16,8 +16,17 @@ public class GameOfLife {
         borderRule = new TorusRule();
         neighbourRule = new MooreNeighborhood(borderRule);
         this.listeners = new ArrayList<>();
+<<<<<<< HEAD
         randomlyPopulate();
 //        addPuffer(20, 40);
+=======
+//        randomlyPopulate();
+        //addGlider(0, 0);
+        //addGlider(5, 5);
+        //addGlider(10, 10);
+        //randomlyPopulate();
+        //addGun(0,0);
+>>>>>>> cattami
     }
 
     private void randomlyPopulate() {
@@ -55,8 +64,16 @@ public class GameOfLife {
         glider.insertPattern(grid1, i, j);
     }
 
+
     public void addPuffer(int i, int j) {
         PatternFactory puffer = new PufferPattern(borderRule);
         puffer.insertPattern(grid1, i, j);
+    }
+    
+    public void addGun(int i, int j) {
+        PatternFactory gun = new GosperGliderGunPattern(borderRule);
+
+        gun.insertPattern(grid1, i, j);
+
     }
 }
