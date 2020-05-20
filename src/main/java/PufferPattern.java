@@ -3,7 +3,7 @@ package src.main.java;
 public class PufferPattern extends PatternFactory {
 
     /**
-     * Constructor for a GliderPattern.
+     * Constructor for a PufferPattern.
      * @param rule the BorderRule to be applied
      */
     public PufferPattern(BorderRule rule) {

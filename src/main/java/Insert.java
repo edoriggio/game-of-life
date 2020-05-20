@@ -15,6 +15,10 @@ public class Insert {
                 PatternFactory puffer = new PufferPattern(borderRule);
                 puffer.insertPattern(grid, i, j);
                 break;
+            case GOSPERGLIDERGUN:
+                PatternFactory gosperGun = new GosperGliderGunPattern(borderRule);
+                gosperGun.insertPattern(grid, i, j);
+                break;
         }
     }
 }

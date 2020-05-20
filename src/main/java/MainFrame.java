@@ -12,9 +12,9 @@ public class MainFrame extends JFrame {
 
         JPanel panel = new JPanel();
         GridGui gridGui = new GridGui(gameOfLife, size);
-        Menu menu = new Menu();
+        Menu menu = new Menu(gameOfLife);
 
-        JButton randomButton = new JButton("add Glider");
+        JButton randomButton = new JButton("Clear grid");
         panel.add(randomButton);
 
         this.add(panel, BorderLayout.SOUTH);
@@ -22,12 +22,12 @@ public class MainFrame extends JFrame {
         this.add(gridGui);
         pack();
 
-        this.setMinimumSize(new Dimension(gridGui.getWidth(), (gridGui.getHeight() + panel.getHeight())));
+        this.setMinimumSize(new Dimension(gridGui.getWidth(), (gridGui.getHeight() + panel.getHeight() + menu.getHeight() + 31)));
 
         randomButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                gameOfLife.addGlider(0,0);
+                gameOfLife.clearGrid();
             }
         });
     }

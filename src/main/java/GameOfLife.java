@@ -26,7 +26,7 @@ public class GameOfLife {
         borderRule = new TorusRule();
         neighbourRule = new MooreNeighborhood(borderRule);
         this.listeners = new ArrayList<>();
-
+        randomlyPopulate();
     }
 
     /**
@@ -38,6 +38,7 @@ public class GameOfLife {
                 grid1.getCell(i, j).setState(Math.random() < 0.6 ? State.DEAD : State.ALIVE);
             }
         }
+
         notifyGridChanged();
     }
 
@@ -50,6 +51,7 @@ public class GameOfLife {
                 grid1.getCell(i, j).setState(State.DEAD);
             }
         }
+
         notifyGridChanged();
     }
 
@@ -89,36 +91,7 @@ public class GameOfLife {
         }
     }
 
-    /**
-     * Add a Glider pattern to the Grid of this at the given position.
-     * @param i the row position
-     * @param j the column position
-     */
-    public void addGlider(int i, int j) {
-        PatternFactory glider = new GliderPattern(borderRule);
-        glider.insertPattern(grid1, i, j);
-        notifyGridChanged();
-    }
-
-    /**
-     * Add a Puffer pattern to the Grid of this at the given position.
-     * @param i the row position
-     * @param j the column position
-     */
-    public void addPuffer(int i, int j) {
-        PatternFactory puffer = new PufferPattern(borderRule);
-        puffer.insertPattern(grid1, i, j);
-        notifyGridChanged();
-    }
-
-    /**
-     * Add a GosperGliderGun pattern to the Grid of this at the given position.
-     * @param i the row position
-     * @param j the column position
-     */
-    public void addGun(int i, int j) {
-        PatternFactory gun = new GosperGliderGunPattern(borderRule);
-        gun.insertPattern(grid1, i, j);
-        notifyGridChanged();
+    public void addPattern(final Pattern pattern, final int i, final int j) {
+        Insert.insertPattern(pattern, this.grid1, this.borderRule, i, j);
     }
 }
