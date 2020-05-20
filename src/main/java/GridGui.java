@@ -15,8 +15,8 @@ public class GridGui extends JPanel implements GameOfLifeListener {
         this.cols = gameOfLife.getCurrentGrid().getColumns();
         this.squareSize = squareSize;
 
-        final int width = (rows * squareSize);
-        final int height = (cols * squareSize);
+        final int height = (rows * squareSize);
+        final int width = (cols * squareSize);
 
         setPreferredSize(new Dimension(width, height));
 
@@ -31,10 +31,10 @@ public class GridGui extends JPanel implements GameOfLifeListener {
                 Color border = (state == State.ALIVE) ? Color.white : Color.black;
 
                 g.setColor(background);
-                g.fillRect(x * squareSize, y * squareSize, squareSize, squareSize);
+                g.fillRect(y * squareSize, x * squareSize, squareSize, squareSize);
 
                 g.setColor(border);
-                g.drawRect(x * squareSize, y * squareSize, squareSize, squareSize);
+                g.drawRect(y * squareSize, x * squareSize, squareSize, squareSize);
             }
         }
     }

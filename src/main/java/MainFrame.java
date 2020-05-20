@@ -16,7 +16,7 @@ public class MainFrame extends JFrame {
 
         JButton randomButton = new JButton("Clear grid");
         panel.add(randomButton);
-        
+
         this.setLocationRelativeTo(null);
         this.add(panel, BorderLayout.SOUTH);
         this.setJMenuBar(menu);
