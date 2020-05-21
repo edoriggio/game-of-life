@@ -5,9 +5,9 @@ import org.junit.Before;
 import org.junit.Test;
 import src.main.java.*;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertSame;
 
-public class GliderFactoryTest {
+public class PatternFactoryTest {
     Grid grid;
     BorderRule borderRule;
     PatternFactory factory;
@@ -40,12 +40,10 @@ public class GliderFactoryTest {
 
     @Test
     public void gliderInRangeTest() {
-
-
         factory.insertPattern(grid, 1 ,1);
 
         for (int k = 0; k < rowPositions.length; k++) {
-            assertTrue(grid.getCell(1 + rowPositions[k], 1 + colPositions[k]).getState() == State.ALIVE);
+            assertSame(grid.getCell(1 + rowPositions[k], 1 + colPositions[k]).getState(), State.ALIVE);
         }
         //grid.printGrid();
     }
@@ -57,11 +55,11 @@ public class GliderFactoryTest {
         factory.insertPattern(grid, 0, 9);
         for (int k = 0; k < rowPositions.length; k++) {
             //compute the validated row and col according to the rule
-            int[] positions = borderRule.validate(grid,0 + rowPositions[k], 9 + colPositions[k]);
+            int[] positions = borderRule.validate(grid, rowPositions[k], 9 + colPositions[k]);
             int row = positions[0];
             int col = positions[1];
-            assertTrue(grid.getCell(row, col).getState() == State.ALIVE);
+            assertSame(grid.getCell(row, col).getState(), State.ALIVE);
         }
-
     }
+
 }

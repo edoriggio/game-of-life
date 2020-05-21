@@ -27,7 +27,15 @@ public class Grid {
         }
     }
 
-    public Cell getCell(int i, int j) {
+    /**
+     * Given an x and y coordinates, retrieve the cell located
+     * at those coordinates.
+     * @param i The x coordinate of the cell to find
+     * @param j The y coordinate of the cell to find
+     * @return The Cell if it has been found,
+     *         null otherwise
+     */
+    public Cell getCell(final int i, final int j) {
         if (i < rows && j < columns && i >= 0 && j >= 0) {
             return grid[i][j];
         } else {
@@ -57,7 +65,7 @@ public class Grid {
     public void printGrid() {
         for (int row = 0; row < rows; row++) {
             for (int column = 0; column < columns; column++) {
-                System.out.print(grid[row][column].getState() == State.DEAD ? "\u25A1" : "\u25A0");
+                System.out.print(grid[row][column].getState() == State.DEAD ? "O" : "X");
                 System.out.print(" ");
             }
             System.out.println();

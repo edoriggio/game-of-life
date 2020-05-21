@@ -1,8 +1,8 @@
 package src.main.java;
 
 /**
- * A cell can have different states.
- * This enumeration class defines the different states a cell can have.
+ * A cell can have different states. This enumeration class
+ * defines the different states a cell can have.
  */
 public enum State {
 

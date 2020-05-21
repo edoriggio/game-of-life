@@ -1,11 +1,13 @@
 package src.main.java;
+
 import java.util.ArrayList;
 
 /**
- * Class used to represent a game of life.
- * It is represented by two parallel Grids ( bidimentional arrays ) one holding the current state
- * ( the once to be shown ) while the other is used to hold the next state to be shown based on the first one.
- * At each step the two grids change their roles.
+ * Class used to represent a game of life. It is represented by two
+ * parallel Grids (bi-dimensional arrays) one holding the current
+ * state (the once to be shown) while the other is used to hold the
+ * next state to be shown based on the first one. At each step the
+ * two grids change their roles.
  */
 public class GameOfLife {
 
@@ -16,11 +18,12 @@ public class GameOfLife {
     private final ArrayList<GameOfLifeListener> listeners;
 
     /**
-     * Constructor for the class GameOfLife. Instantiate an empty GameOfLife ( all Cells are DEAD ).
-     * @param rows the number of rows in the Grid
-     * @param cols the number of columns in the Grid
+     * Constructor for the class GameOfLife. Instantiate an empty
+     * GameOfLife (all Cells are set to State.DEAD).
+     * @param rows The number of rows in the Grid
+     * @param cols The number of columns in the Grid
      */
-    public GameOfLife(int rows, int cols) {
+    public GameOfLife(final int rows, final int cols) {
         grid1 = new Grid(rows, cols);
         grid2 = new Grid(rows, cols);
         borderRule = new TorusRule();
@@ -30,7 +33,7 @@ public class GameOfLife {
     }
 
     /**
-     * Randomly assign a State to each Cell in the Grid of this.
+     * Randomly assign a State to each Cell in the Grid of 'this'.
      */
     public void randomlyPopulate() {
         for (int i = 0; i < grid1.getRows(); i++) {
@@ -38,12 +41,11 @@ public class GameOfLife {
                 grid1.getCell(i, j).setState(Math.random() < 0.6 ? State.DEAD : State.ALIVE);
             }
         }
-
         notifyGridChanged();
     }
 
     /**
-     * Clear the current Grid ( set all Cells to be DEAD ).
+     * Clear the current Grid (set all Cells to State.DEAD).
      */
     public void clearGrid() {
         for (int i = 0; i < grid1.getRows(); i++) {
@@ -51,32 +53,31 @@ public class GameOfLife {
                 grid1.getCell(i, j).setState(State.DEAD);
             }
         }
-
         notifyGridChanged();
     }
 
     /**
-     * Get the current Grid of this.
-     * @return the current Grid of Cells.
+     * Get the current Grid of 'this'.
+     * @return The current Grid of Cells.
      */
     public Grid getCurrentGrid() {
         return grid1;
     }
 
     /**
-     * Compute a step of the game of life game.
+     * Compute a step of game of life.
      */
     public void step() {
         Compute.computeNextGrid(neighbourRule, grid1, grid2);
-        Grid temp = grid1;
+        final Grid temp = grid1;
         grid1 = grid2;
         grid2 = temp;
         notifyGridChanged();
     }
 
     /**
-     * Add a GameOfLifeListener to this.
-     * @param listener the Listener that needs to listen to changes happening to this.
+     * Add a GameOfLifeListener to 'this'.
+     * @param listener Listens to changes happening to 'this'.
      */
     public void addGameOfLifeListener(final GameOfLifeListener listener) {
         this.listeners.add(listener);
@@ -86,20 +87,24 @@ public class GameOfLife {
      * Notify all listeners attached to this that the status has changed.
      */
     public void notifyGridChanged() {
-        for (GameOfLifeListener listener : listeners) {
+        for (final GameOfLifeListener listener : listeners) {
             listener.gridChanged();
         }
     }
 
+    /**
+     * Add a pattern to a grid, given a pattern type, an x coordinate and a
+     * y coordinate.
+     * @param pattern The type of pattern to be inserted
+     * @param i The x coordinate of the pattern
+     * @param j The y coordinate of the pattern
+     */
     public void addPattern(final Pattern pattern, final int i, final int j) {
         try {
-            Insert.insertPattern(pattern, this.grid1, this.borderRule, i, j);
+            PatternInsert.insertPattern(pattern, this.grid1, this.borderRule, i, j);
+        } catch (final Exception exception) {
+            MainFrame.showError(exception.toString());
         }
-        catch (Exception e){
-            //System.out.println(e.toString());
-            MainFrame.showError(e.toString());
-        }
-
-
     }
+
 }

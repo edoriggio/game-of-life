@@ -21,15 +21,15 @@ public class TextUserInterface {
      * Run the application.
      */
     public void run() {
-        Scanner sc = new Scanner(System.in);
+        final Scanner sc = new Scanner(System.in);
         boolean flag = true;
 
         while (flag) {
-            String command = sc.nextLine();
-            if (command.equals("step")) {
+            final String command = sc.nextLine();
+            if ("step".equals(command)) {
                 model.step();
                 model.getCurrentGrid().printGrid();
-            } else if (command.equals("exit")) {
+            } else if ("exit".equals(command)) {
                 flag = false;
             } else {
                 flag = false;
