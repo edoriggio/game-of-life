@@ -114,7 +114,7 @@ public class GameOfLife {
 
     public void changeSpeed(final int delta) {
         int newSpeed = this.speed + delta;
-        this.speed = newSpeed <= this.maxTimeBetweenSteps && newSpeed >= 0 ? newSpeed : this.speed;
+        this.speed = newSpeed < this.maxTimeBetweenSteps && newSpeed >= 0 ? newSpeed : this.speed;
     }
 
     public Integer getSpeed() {
