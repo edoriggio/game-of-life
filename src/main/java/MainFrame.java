@@ -7,9 +7,7 @@ import java.awt.Label;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 /**
  * This class is responsible of creating the JFrame on which
@@ -30,7 +28,17 @@ public class MainFrame extends JFrame {
         final Menu menu = new Menu(gameOfLife);
 
         final JButton clear = new JButton("Clear grid");
+        final JButton random = new JButton("Random");
+        final JButton increaseSpeed = new JButton("+");
+        final JButton decreaseSpeed = new JButton("-");
+        final JLabel speedLabel = new JLabel(gameOfLife.getSpeed().toString());
+
+
+        panel.add(random);
         panel.add(clear);
+        panel.add(increaseSpeed);
+        panel.add(speedLabel);
+        panel.add(decreaseSpeed);
 
         this.setLocationRelativeTo(null);
         this.add(panel, BorderLayout.SOUTH);
@@ -47,6 +55,31 @@ public class MainFrame extends JFrame {
                 gameOfLife.clearGrid();
             }
         });
+
+        random.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                gameOfLife.randomlyPopulate();
+            }
+        });
+
+        increaseSpeed.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                gameOfLife.changeSpeed(100);
+                speedLabel.setText(gameOfLife.getSpeed().toString());
+            }
+        });
+
+        decreaseSpeed.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                gameOfLife.changeSpeed(-100);
+                speedLabel.setText(gameOfLife.getSpeed().toString());
+            }
+        });
+
+
     }
 
     public static void showError(final String error) {

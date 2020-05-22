@@ -23,7 +23,7 @@ public class Menu extends JMenuBar {
         super();
         this.gameOfLife = gameOfLife;
         this.menu = new JMenu("Add pattern");
-        addButtons();
+        addMenuItems();
 
         this.add(menu);
     }
@@ -31,7 +31,7 @@ public class Menu extends JMenuBar {
     /**
      * Add all buttons given the values of the Patterns enum.
      */
-    private void addButtons() {
+    private void addMenuItems() {
         for (final Pattern p : Pattern.values()) {
             final JMenuItem item = new JMenuItem(p.getName());
             menu.add(item);
@@ -39,11 +39,9 @@ public class Menu extends JMenuBar {
             item.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(final ActionEvent e) {
-                    try {
-                        gameOfLife.addPattern(p, 0, 0);
-                    } catch (final Exception exception) {
-                        exception.printStackTrace();
-                    }
+
+                    gameOfLife.addPattern(p, 0, 0);
+
                 }
             });
         }

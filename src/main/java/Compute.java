@@ -10,7 +10,7 @@ import java.util.LinkedList;
 public class Compute {
 
     private Compute() {
-        // Avoid that Compute might be instantiated
+        // Never instantiated. This class is a collection of functionalities.
     }
 
     /**

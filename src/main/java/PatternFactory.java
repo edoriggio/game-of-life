@@ -8,7 +8,7 @@ package src.main.java;
  * position. This class also depends on a BorderRule instance to re-direct cells that
  * would be otherwise out of bounds in the grid.
  */
-public class PatternFactory {
+public abstract class PatternFactory {
     private final int rowsNeeded;
     private final int colsNeeded;
     int[] rowPositions;
@@ -21,7 +21,7 @@ public class PatternFactory {
      * @param j the columns needed by the concrete Pattern
      * @param rule the BorderRule applied to the grid
      */
-    PatternFactory(final int i, final int j, final BorderRule rule) {
+    protected PatternFactory(final int i, final int j, final BorderRule rule) {
         this.rowsNeeded = i;
         this.colsNeeded = j;
         this.borderRule = rule;

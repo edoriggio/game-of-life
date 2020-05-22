@@ -20,7 +20,7 @@ public class TextUserInterface {
     /**
      * Run the application.
      */
-    public void run() {
+    public void run() throws InterruptedException {
         final Scanner sc = new Scanner(System.in);
         boolean flag = true;
 

@@ -16,6 +16,8 @@ public class GameOfLife {
     private final BorderRule borderRule;
     private final Neighborhood neighbourRule;
     private final ArrayList<GameOfLifeListener> listeners;
+    private int speed;
+    private final int maxTimeBetweenSteps;
 
     /**
      * Constructor for the class GameOfLife. Instantiate an empty
@@ -29,7 +31,9 @@ public class GameOfLife {
         borderRule = new TorusRule();
         neighbourRule = new MooreNeighborhood(borderRule);
         this.listeners = new ArrayList<>();
-        randomlyPopulate();
+        this.speed = 100;
+        this.maxTimeBetweenSteps = 1100;
+
     }
 
     /**
@@ -67,12 +71,13 @@ public class GameOfLife {
     /**
      * Compute a step of game of life.
      */
-    public void step() {
+    public void step() throws InterruptedException {
         Compute.computeNextGrid(neighbourRule, grid1, grid2);
         final Grid temp = grid1;
         grid1 = grid2;
         grid2 = temp;
         notifyGridChanged();
+        Thread.sleep(maxTimeBetweenSteps - speed);
     }
 
     /**
@@ -102,9 +107,18 @@ public class GameOfLife {
     public void addPattern(final Pattern pattern, final int i, final int j) {
         try {
             PatternInsert.insertPattern(pattern, this.grid1, this.borderRule, i, j);
-        } catch (final Exception exception) {
+        } catch (final PatternException exception) {
             MainFrame.showError(exception.toString());
         }
+    }
+
+    public void changeSpeed(final int delta) {
+        int newSpeed = this.speed + delta;
+        this.speed = newSpeed <= this.maxTimeBetweenSteps && newSpeed >= 0 ? newSpeed : this.speed;
+    }
+
+    public Integer getSpeed() {
+        return this.speed;
     }
 
 }
