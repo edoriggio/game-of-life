@@ -16,20 +16,15 @@ public class Main {
      */
     public static void main(final String[] args) throws InterruptedException {
         // Model
-
-        final GameOfLife game = new GameOfLife(80, 80);
-
+        final GameOfLife game = new GameOfLife(70, 80);
 
         // GUI
-        final MainFrame frame = new MainFrame(game, 10);
+        final FrameMain frame = new FrameMain(game, 10);
         frame.setVisible(true);
 
-        while( true ) {
+        while (true) {
             game.step();
-
         }
     }
-
-
 
 }

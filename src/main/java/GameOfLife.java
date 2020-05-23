@@ -31,7 +31,7 @@ public class GameOfLife {
         borderRule = new TorusRule();
         neighbourRule = new MooreNeighborhood(borderRule);
         this.listeners = new ArrayList<>();
-        this.speed = 100;
+        this.speed = 1000;
         this.maxTimeBetweenSteps = 1100;
 
     }
@@ -108,13 +108,13 @@ public class GameOfLife {
         try {
             PatternInsert.insertPattern(pattern, this.grid1, this.borderRule, i, j);
         } catch (final PatternException exception) {
-            MainFrame.showError(exception.toString());
+            new FrameError("The pattern you are trying to insert does not fit");
         }
     }
 
     public void changeSpeed(final int delta) {
         int newSpeed = this.speed + delta;
-        this.speed = newSpeed < this.maxTimeBetweenSteps && newSpeed >= 0 ? newSpeed : this.speed;
+        this.speed = newSpeed < this.maxTimeBetweenSteps && newSpeed > 0 ? newSpeed : this.speed;
     }
 
     public Integer getSpeed() {

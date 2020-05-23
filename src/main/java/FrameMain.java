@@ -2,11 +2,8 @@ package src.main.java;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.awt.Frame;
-import java.awt.Label;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -17,14 +14,14 @@ import javax.swing.JPanel;
  * This class is responsible of creating the JFrame on which
  * the application is built.
  */
-public class MainFrame extends JFrame {
+public class FrameMain extends JFrame {
 
     /**
-     * Constructor for the MainFrame class.
+     * Constructor for the FrameMain class.
      * @param gameOfLife An instance of game of life
      * @param size The size of the grid's squares
      */
-    public MainFrame(final GameOfLife gameOfLife, final int size) {
+    public FrameMain(final GameOfLife gameOfLife, final int size) {
         super("Game of Life");
 
         final JPanel panel = new JPanel();
@@ -33,24 +30,22 @@ public class MainFrame extends JFrame {
 
         final JButton clear = new JButton("Clear grid");
         final JButton random = new JButton("Random");
-        final JButton increaseSpeed = new JButton("+");
         final JButton decreaseSpeed = new JButton("-");
+        final JButton increaseSpeed = new JButton("+");
         final JLabel speedLabel = new JLabel(gameOfLife.getSpeed().toString());
-
 
         panel.add(random);
         panel.add(clear);
-        panel.add(increaseSpeed);
-        panel.add(speedLabel);
         panel.add(decreaseSpeed);
+        panel.add(speedLabel);
+        panel.add(increaseSpeed);
 
-        this.setLocationRelativeTo(null);
-        this.add(panel, BorderLayout.SOUTH);
-        this.setJMenuBar(menu);
-        this.add(gridGui);
+        add(gridGui);
+        add(panel, BorderLayout.SOUTH);
+        setJMenuBar(menu);
         pack();
-
-        this.setMinimumSize(new Dimension(gridGui.getWidth(),
+        setLocationRelativeTo(null);
+        setMinimumSize(new Dimension(gridGui.getWidth(),
                 gridGui.getHeight() + panel.getHeight() + menu.getHeight() + 31));
 
         clear.addActionListener(new ActionListener() {
@@ -82,16 +77,6 @@ public class MainFrame extends JFrame {
                 speedLabel.setText(gameOfLife.getSpeed().toString());
             }
         });
-
-
-    }
-
-    public static void showError(final String error) {
-        final Frame errorFrame = new JFrame();
-        errorFrame.setLocationRelativeTo(null);
-        errorFrame.add(new Label(error));
-        errorFrame.pack();
-        errorFrame.setVisible(true);
     }
 
 }
