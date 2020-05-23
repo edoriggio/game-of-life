@@ -9,6 +9,9 @@ import javax.swing.JPanel;
  * This class is responsible of building a JPanel on which a grid
  * if drawn. This grid will have a black square for each alive cell
  * a a white square for each dead cell.
+ *
+ * @author Edoardo Riggio
+ * @version 24/05/2020
  */
 public class GridGui extends JPanel implements GameOfLifeListener {
     private final GameOfLife gameOfLife;

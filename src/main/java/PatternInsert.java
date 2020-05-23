@@ -3,6 +3,9 @@ package src.main.java;
 /**
  * This class is responsible to understand the type of pattern.
  * Given this pattern, it will insert it inside of a grid.
+ *
+ * @author Edoardo Riggio
+ * @version 24/05/2020
  */
 public class PatternInsert {
 

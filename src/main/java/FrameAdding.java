@@ -1,15 +1,53 @@
 package src.main.java;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Label;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+/**
+ * This class is responsible for creating the frame to add patterns.
+ * By inserting an x and y value, the pattern will be added in those
+ * coordinates.
+ *
+ * @author Edoardo Riggio
+ * @version 24/05/2020
+ */
 public class FrameAdding extends JFrame {
 
-    public FrameAdding(final Pattern pattern, final int rows, final int cols,
-                       final GameOfLife gameOfLife) {
+    private final int rows;
+    private final int cols;
+    private final Pattern pattern;
+    private final GameOfLife gameOfLife;
+    private final JTextField input1;
+    private final JTextField input2;
+    private final JButton add;
+    private final JButton cancel;
+
+    /**
+     * Constructor for the FrameAdding class.
+     * @param pattern The pattern to be added
+     * @param gameOfLife An instance of game of life
+     */
+    public FrameAdding(final Pattern pattern, final GameOfLife gameOfLife) {
         super("Add a " + pattern.getName());
+
+        this.rows = gameOfLife.getCurrentGrid().getRows();
+        this.cols = gameOfLife.getCurrentGrid().getColumns();
+        this.pattern = pattern;
+        this.gameOfLife = gameOfLife;
+
+        this.input1 = new JTextField();
+        this.input2 = new JTextField();
+        this.add = new JButton("Add");
+        this.cancel = new JButton("Cancel");
 
         final JPanel panel = new JPanel();
         final GridBagLayout layout = new GridBagLayout();
@@ -17,13 +55,16 @@ public class FrameAdding extends JFrame {
 
         panel.setLayout(layout);
 
-//        constraints.fill = GridBagConstraints.HORIZONTAL;
-//        constraints.gridx = 0;
-//        constraints.gridy = 0;
-//        constraints.gridwidth = 3;
-//        panel.add(new Label("Please insert the x and y coordinates of the pattern "), constraints);
+        buildFrame(constraints, panel);
+        displayFrame();
+    }
 
-        // X Coordinate row
+    /**
+     * This method creates the first field of the frame.
+     * @param constraints The constraint used
+     * @param panel The panel on which the components have to be placed
+     */
+    private void addFirstField(final GridBagConstraints constraints, final JPanel panel) {
         constraints.fill = GridBagConstraints.HORIZONTAL;
         constraints.gridx = 0;
         constraints.gridy = 0;
@@ -31,15 +72,20 @@ public class FrameAdding extends JFrame {
 
         constraints.gridx = 1;
         constraints.gridy = 0;
-        final JTextField input1 = new JTextField();
         input1.setPreferredSize(new Dimension(50, 20));
         panel.add(input1, constraints);
 
         constraints.gridx = 2;
         constraints.gridy = 0;
         panel.add(new Label("(Max. " + cols + ")"), constraints);
+    }
 
-        // Y Coordinate row
+    /**
+     * This method creates the second field of the frame.
+     * @param constraints The constraint used
+     * @param panel The panel on which the components have to be placed
+     */
+    private void addSecondField(final GridBagConstraints constraints, final JPanel panel) {
         constraints.fill = GridBagConstraints.HORIZONTAL;
         constraints.gridx = 0;
         constraints.gridy = 1;
@@ -47,39 +93,43 @@ public class FrameAdding extends JFrame {
 
         constraints.gridx = 1;
         constraints.gridy = 1;
-        final JTextField input2 = new JTextField();
         input2.setPreferredSize(new Dimension(50, 20));
         panel.add(input2, constraints);
 
         constraints.gridx = 2;
         constraints.gridy = 1;
         panel.add(new Label("(Max. " + rows + ")"), constraints);
+    }
 
+    /**
+     * This method creates the buttons of the frame.
+     * @param constraints The constraint used
+     * @param panel The panel on which the components have to be placed
+     */
+    private void addButtons(final GridBagConstraints constraints, final JPanel panel) {
         // Cancel Button
         constraints.fill = GridBagConstraints.HORIZONTAL;
         constraints.gridx = 1;
         constraints.gridy = 2;
         constraints.gridwidth = 1;
-        final JButton cancel = new JButton("Cancel");
         panel.add(cancel, constraints);
 
         // Add Button
         constraints.gridx = 2;
         constraints.gridy = 2;
         constraints.gridwidth = 1;
-        final JButton add = new JButton("Add");
         panel.add(add, constraints);
 
-        add(panel);
+        addDecorators();
+    }
 
-        pack();
-        setLocationRelativeTo(null);
-        setMinimumSize(this.getSize());
-        setVisible(true);
-
+    /**
+     * This method creates the decorators of the buttons.
+     */
+    private void addDecorators() {
         add.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent actionEvent) {
+            public void actionPerformed(final ActionEvent actionEvent) {
                 gameOfLife.addPattern(pattern, Integer.parseInt(input2.getText()),
                         Integer.parseInt(input1.getText()));
                 dispose();
@@ -88,10 +138,33 @@ public class FrameAdding extends JFrame {
 
         cancel.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent actionEvent) {
+            public void actionPerformed(final ActionEvent actionEvent) {
                 dispose();
             }
         });
+    }
+
+    /**
+     * This method builds the frame together.
+     * @param constraints The constraint used
+     * @param panel The panel on which the components have to be placed
+     */
+    private void buildFrame(final GridBagConstraints constraints, final JPanel panel) {
+        addFirstField(constraints, panel);
+        addSecondField(constraints, panel);
+        addButtons(constraints, panel);
+
+        add(panel);
+    }
+
+    /**
+     * This method displays the frame.
+     */
+    private void displayFrame() {
+        pack();
+        setLocationRelativeTo(null);
+        setMinimumSize(this.getSize());
+        setVisible(true);
     }
 
 }

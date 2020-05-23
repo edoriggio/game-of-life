@@ -3,6 +3,9 @@ package src.main.java;
 /**
  * A cell can have different states. This enumeration class
  * defines the different states a cell can have.
+ *
+ * @author Edoardo Riggio
+ * @version 24/05/2020
  */
 public enum State {
 

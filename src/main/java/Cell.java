@@ -3,6 +3,9 @@ package src.main.java;
 /**
  * A cell is the most basic block of the Game of Life.
  * This cell has a status and can interact with neighboring cells.
+ *
+ * @author Edoardo Riggio
+ * @version 24/05/2020
  */
 public class Cell {
 

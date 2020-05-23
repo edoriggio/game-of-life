@@ -3,10 +3,16 @@ package src.main.java;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.*;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+
 
 /**
  * This class is used to create the menu of the application.
+ *
+ * @author Edoardo Riggio
+ * @version 24/05/2020
  */
 public class Menu extends JMenuBar {
 
@@ -21,11 +27,9 @@ public class Menu extends JMenuBar {
         super();
 
         this.gameOfLife = gameOfLife;
-        int rows = gameOfLife.getCurrentGrid().getRows();
-        int cols = gameOfLife.getCurrentGrid().getColumns();
 
         this.menu = new JMenu("Add pattern");
-        addMenuItems(rows, cols);
+        addMenuItems();
 
         this.add(menu);
     }
@@ -33,7 +37,7 @@ public class Menu extends JMenuBar {
     /**
      * Add all buttons given the values of the Patterns enum.
      */
-    private void addMenuItems(final int rows, final int cols) {
+    private void addMenuItems() {
         for (final Pattern p : Pattern.values()) {
             final JMenuItem item = new JMenuItem(p.getName());
             menu.add(item);
@@ -41,7 +45,7 @@ public class Menu extends JMenuBar {
             item.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(final ActionEvent e) {
-                    new FrameAdding(p, rows, cols, gameOfLife);
+                    new FrameAdding(p, gameOfLife);
                 }
             });
         }

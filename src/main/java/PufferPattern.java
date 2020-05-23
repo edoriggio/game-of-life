@@ -1,5 +1,11 @@
 package src.main.java;
 
+/**
+ * A definition of a PufferPattern.
+ *
+ * @author Edoardo Riggio
+ * @version 24/05/2020
+ */
 public class PufferPattern extends PatternFactory {
 
     /**

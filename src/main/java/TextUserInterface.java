@@ -19,6 +19,7 @@ public class TextUserInterface {
 
     /**
      * Run the application.
+     * @throws InterruptedException Exception for Thread.sleep()
      */
     public void run() throws InterruptedException {
         final Scanner sc = new Scanner(System.in);
@@ -32,7 +33,6 @@ public class TextUserInterface {
             } else if ("exit".equals(command)) {
                 flag = false;
             } else {
-                flag = false;
                 break;
             }
         }

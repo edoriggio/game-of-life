@@ -3,6 +3,9 @@ package src.main.java;
 /**
  * The Grid class is used to create a bi-dimensional array.
  * This array is composed of cells.
+ *
+ * @author Edoardo Riggio
+ * @version 24/05/2020
  */
 public class Grid {
 

@@ -3,6 +3,9 @@ package src.main.java;
 /**
  * This enum contains all of the possible predefined patterns that can be added.
  * To each of them it assigns a more human readable String.
+ *
+ * @author Edoardo Riggio
+ * @version 24/05/2020
  */
 public enum Pattern {
     GLIDER("Glider"),

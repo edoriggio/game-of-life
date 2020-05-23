@@ -1,16 +1,27 @@
 package src.main.java;
 
-import java.awt.Label;
 import java.awt.BorderLayout;
+import java.awt.Label;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.JButton;
 
+/**
+ * This class is responsible for creating the frame to display errors.
+ * This frame will appear when a PatternException is caught.
+ *
+ * @author Edoardo Riggio
+ * @version 24/05/2020
+ */
 public class FrameError extends JFrame {
 
+    /**
+     * Constructor for the FrameError class.
+     * @param error The error message to display
+     */
     public FrameError(final String error) {
         super("Error");
 
@@ -28,7 +39,7 @@ public class FrameError extends JFrame {
 
         ok.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent actionEvent) {
+            public void actionPerformed(final ActionEvent actionEvent) {
                 dispose();
             }
         });

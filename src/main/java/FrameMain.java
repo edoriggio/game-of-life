@@ -2,8 +2,8 @@ package src.main.java;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -13,6 +13,9 @@ import javax.swing.JPanel;
 /**
  * This class is responsible of creating the JFrame on which
  * the application is built.
+ *
+ * @author Edoardo Riggio
+ * @version 24/05/2020
  */
 public class FrameMain extends JFrame {
 
@@ -57,14 +60,14 @@ public class FrameMain extends JFrame {
 
         random.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(final ActionEvent e) {
                 gameOfLife.randomlyPopulate();
             }
         });
 
         increaseSpeed.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(final ActionEvent e) {
                 gameOfLife.changeSpeed(100);
                 speedLabel.setText(gameOfLife.getSpeed().toString());
             }
@@ -72,7 +75,7 @@ public class FrameMain extends JFrame {
 
         decreaseSpeed.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(final ActionEvent e) {
                 gameOfLife.changeSpeed(-100);
                 speedLabel.setText(gameOfLife.getSpeed().toString());
             }

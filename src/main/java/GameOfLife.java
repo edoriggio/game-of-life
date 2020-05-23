@@ -70,6 +70,7 @@ public class GameOfLife {
 
     /**
      * Compute a step of game of life.
+     * @throws InterruptedException Exception for Thread.sleep()
      */
     public void step() throws InterruptedException {
         Compute.computeNextGrid(neighbourRule, grid1, grid2);
@@ -112,11 +113,19 @@ public class GameOfLife {
         }
     }
 
+    /**
+     * Change the speed of the animation.
+     * @param delta The increase rate
+     */
     public void changeSpeed(final int delta) {
-        int newSpeed = this.speed + delta;
+        final int newSpeed = this.speed + delta;
         this.speed = newSpeed < this.maxTimeBetweenSteps && newSpeed > 0 ? newSpeed : this.speed;
     }
 
+    /**
+     * Getter for the speed of the animation.
+     * @return The speed of the animation
+     */
     public Integer getSpeed() {
         return this.speed;
     }
