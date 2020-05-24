@@ -36,12 +36,16 @@ public class FrameMain extends JFrame {
         final JButton decreaseSpeed = new JButton("-");
         final JButton increaseSpeed = new JButton("+");
         final JLabel speedLabel = new JLabel(gameOfLife.getSpeed().toString());
+        final JButton pauseOrPlay = new JButton("pause");
+
 
         panel.add(random);
         panel.add(clear);
         panel.add(decreaseSpeed);
         panel.add(speedLabel);
         panel.add(increaseSpeed);
+        panel.add(pauseOrPlay);
+
 
         add(gridGui);
         add(panel, BorderLayout.SOUTH);
@@ -80,6 +84,18 @@ public class FrameMain extends JFrame {
                 speedLabel.setText(gameOfLife.getSpeed().toString());
             }
         });
+
+        pauseOrPlay.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                gameOfLife.pauseOrPlayGame();
+                String currentText = pauseOrPlay.getText();
+                String newText = (currentText == "pause" ? "play" : "pause");
+                pauseOrPlay.setText(newText);
+            }
+        });
+
+
     }
 
 }

@@ -22,8 +22,20 @@ public class Main {
         final FrameMain frame = new FrameMain(game, 10);
         frame.setVisible(true);
 
+        runGame(game);
+    }
+
+    /**
+     * Run a game of life instance.
+     * @param game the GameOFLife to be run.
+     * @throws InterruptedException Interruption exception to be thrown.
+     */
+    public static void runGame(GameOfLife game) throws InterruptedException {
         while (true) {
-            game.step();
+            Thread.sleep(10);
+            if (!game.isPaused()) {
+                game.step();
+            }
         }
     }
 
