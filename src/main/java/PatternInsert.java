@@ -32,28 +32,28 @@ public class PatternInsert {
 
         switch (pattern) {
             case BLOCK:
-                final PatternFactory block = new BlockPattern(borderRule);
-                success = block.insertPattern(grid, i, j);
+                success = new BlockPattern(borderRule).insertPattern(grid, i, j);
                 break;
             case BEEHIVE:
-                final PatternFactory beehive = new BeehivePattern(borderRule);
-                success = beehive.insertPattern(grid, i, j);
+                success = new BeehivePattern(borderRule).insertPattern(grid, i, j);
                 break;
             case LOAF:
-                final PatternFactory loaf = new LoafPattern(borderRule);
-                success = loaf.insertPattern(grid, i, j);
+                success = new LoafPattern(borderRule).insertPattern(grid, i, j);
                 break;
             case GLIDER:
-                final PatternFactory glider = new GliderPattern(borderRule);
-                success = glider.insertPattern(grid, i, j);
+                success = new GliderPattern(borderRule).insertPattern(grid, i, j);
                 break;
             case PUFFER:
-                final PatternFactory puffer = new PufferPattern(borderRule);
-                success = puffer.insertPattern(grid, i, j);
+                success = new PufferPattern(borderRule).insertPattern(grid, i, j);
                 break;
             case GOSPERGLIDERGUN:
-                final PatternFactory gosperGun = new GosperGliderGunPattern(borderRule);
-                success = gosperGun.insertPattern(grid, i, j);
+                success = new GosperGliderGunPattern(borderRule).insertPattern(grid, i, j);
+                break;
+            case HEXAPOLE:
+                success = new HexapolePattern(borderRule).insertPattern(grid, i,j);
+                break;
+            case CIRCLEOFFIRE:
+                success = new CircleOfFirePattern(borderRule).insertPattern(grid,i,j);
                 break;
             default:
                 throw new PatternException("Pattern not found");
