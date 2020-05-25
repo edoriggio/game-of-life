@@ -5,8 +5,10 @@ import org.junit.Before;
 import org.junit.Test;
 import src.main.java.*;
 import src.main.java.patterns.GliderPattern;
+import src.main.java.patterns.GosperGliderGunPattern;
 
 import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertFalse;
 
 /**
  * Test class for PatternFactory class.
@@ -65,6 +67,17 @@ public class PatternFactoryTest {
             int col = positions[1];
             assertSame(grid.getCell(row, col).getState(), State.ALIVE);
         }
+    }
+
+    @Test
+    public void testPatternTooBig() {
+        PatternFactory factory2 = new GosperGliderGunPattern(borderRule);
+        assertFalse(factory2.insertPattern(grid,0,0));
+    }
+
+    @Test
+    public void testIndexOutOfBound() {
+        assertFalse(factory.insertPattern(grid, 20,20));
     }
 
 }

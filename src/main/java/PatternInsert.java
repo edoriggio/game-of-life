@@ -59,7 +59,14 @@ public class PatternInsert {
             case DOUBLECIRCLEOFFIRE:
                 success = new DoubleCircleOfFire(borderRule).insertPattern(grid, i, j);
                 break;
+            case TUB:
+                success = new TubPattern(borderRule).insertPattern(grid, i, j);
+                break;
+            case BOAT:
+                success = new BoatPattern(borderRule).insertPattern(grid, i, j);
+                break;
             default:
+                System.out.print(pattern.toString());
                 throw new PatternException("Pattern not found");
         }
 
