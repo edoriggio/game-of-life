@@ -5,7 +5,11 @@ import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.*;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenuBar;
+import javax.swing.JPanel;
 
 /**
  * This class is responsible of creating the JFrame on which
@@ -15,6 +19,8 @@ import javax.swing.*;
  * @version 24/05/2020
  */
 public class FrameMain extends JFrame {
+
+    private final GameOfLife gameOfLife;
 
     private final JPanel panel;
     private final JPanel gridGui;
@@ -34,6 +40,8 @@ public class FrameMain extends JFrame {
     public FrameMain(final GameOfLife gameOfLife, final int size) {
         super("Game of Life");
 
+        this.gameOfLife = gameOfLife;
+
         this.panel = new JPanel();
         this.gridGui = new GridGui(gameOfLife, size);
         this.menu = new Menu(gameOfLife);
@@ -46,11 +54,14 @@ public class FrameMain extends JFrame {
         this.pauseOrPlay = new JButton("pause");
 
 
-        addComponents(gameOfLife);
+        addComponents();
         buildFrame();
     }
 
-    private void addComponents(final GameOfLife gameOfLife) {
+    /**
+     * This method creates the components for the frame.
+     */
+    private void addComponents() {
         panel.add(random);
         panel.add(clear);
         panel.add(decreaseSpeed);
@@ -59,10 +70,13 @@ public class FrameMain extends JFrame {
         panel.add(pauseOrPlay);
 
 
-        addDecorators(gameOfLife);
+        addDecorators();
     }
 
-    private void addDecorators(final GameOfLife gameOfLife) {
+    /**
+     * Add the decorators to the buttons.
+     */
+    private void addDecorators() {
         clear.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(final ActionEvent e) {
@@ -106,6 +120,9 @@ public class FrameMain extends JFrame {
 
     }
 
+    /**
+     * Method to build the frame.
+     */
     private void buildFrame() {
         add(gridGui);
         add(panel, BorderLayout.SOUTH);
