@@ -16,6 +16,8 @@ import javax.swing.*;
  */
 public class FrameMain extends JFrame {
 
+    private final GameOfLife gameOfLife;
+
     private final JPanel panel;
     private final JPanel gridGui;
     private final JMenuBar menu;
@@ -33,6 +35,8 @@ public class FrameMain extends JFrame {
     public FrameMain(final GameOfLife gameOfLife, final int size) {
         super("Game of Life");
 
+        this.gameOfLife = gameOfLife;
+
         this.panel = new JPanel();
         this.gridGui = new GridGui(gameOfLife, size);
         this.menu = new Menu(gameOfLife);
@@ -43,21 +47,27 @@ public class FrameMain extends JFrame {
         this.increaseSpeed = new JButton("+");
         this.speedLabel = new JLabel(gameOfLife.getSpeed().toString());
 
-        addComponents(gameOfLife);
+        addComponents();
         buildFrame();
     }
 
-    private void addComponents(final GameOfLife gameOfLife) {
+    /**
+     * This method creates the components for the frame.
+     */
+    private void addComponents() {
         panel.add(random);
         panel.add(clear);
         panel.add(decreaseSpeed);
         panel.add(speedLabel);
         panel.add(increaseSpeed);
 
-        addDecorators(gameOfLife);
+        addDecorators();
     }
 
-    private void addDecorators(final GameOfLife gameOfLife) {
+    /**
+     * Add the decorators to the buttons.
+     */
+    private void addDecorators() {
         clear.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(final ActionEvent e) {
@@ -89,6 +99,9 @@ public class FrameMain extends JFrame {
         });
     }
 
+    /**
+     * Method to build the frame.
+     */
     private void buildFrame() {
         add(gridGui);
         add(panel, BorderLayout.SOUTH);
