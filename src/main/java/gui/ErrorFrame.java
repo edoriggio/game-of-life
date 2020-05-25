@@ -1,4 +1,4 @@
-package src.main.java;
+package src.main.java.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Label;
@@ -16,13 +16,13 @@ import javax.swing.JPanel;
  * @author Edoardo Riggio
  * @version 24/05/2020
  */
-public class FrameError extends JFrame {
+public class ErrorFrame extends JFrame {
 
     /**
-     * Constructor for the FrameError class.
+     * Constructor for the ErrorFrame class.
      * @param error The error message to display
      */
-    public FrameError(final String error) {
+    public ErrorFrame(final String error) {
         super("Error");
 
         final JPanel panel = new JPanel();

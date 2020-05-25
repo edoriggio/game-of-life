@@ -1,4 +1,7 @@
-package src.main.java;
+package src.main.java.gui;
+
+import src.main.java.GameOfLife;
+import src.main.java.Pattern;
 
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
@@ -20,7 +23,7 @@ import javax.swing.JTextField;
  * @author Edoardo Riggio
  * @version 24/05/2020
  */
-public class FrameAdding extends JFrame {
+public class AddingFrame extends JFrame {
 
     private final int rows;
     private final int cols;
@@ -32,11 +35,11 @@ public class FrameAdding extends JFrame {
     private final JButton cancel;
 
     /**
-     * Constructor for the FrameAdding class.
+     * Constructor for the AddingFrame class.
      * @param pattern The pattern to be added
      * @param gameOfLife An instance of game of life
      */
-    public FrameAdding(final Pattern pattern, final GameOfLife gameOfLife) {
+    public AddingFrame(final Pattern pattern, final GameOfLife gameOfLife) {
         super("Add a " + pattern.getName());
 
         this.rows = gameOfLife.getCurrentGrid().getRows();

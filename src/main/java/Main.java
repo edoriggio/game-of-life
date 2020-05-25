@@ -1,5 +1,7 @@
 package src.main.java;
 
+import src.main.java.gui.MainFrame;
+
 /**
  * The class from which the application runs.
  */
@@ -19,7 +21,7 @@ public class Main {
         final GameOfLife game = new GameOfLife(70, 80);
 
         // GUI
-        final FrameMain frame = new FrameMain(game, 10);
+        final MainFrame frame = new MainFrame(game, 10);
         frame.setVisible(true);
 
         runGame(game);

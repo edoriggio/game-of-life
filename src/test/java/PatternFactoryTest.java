@@ -4,6 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import src.main.java.*;
+import src.main.java.patterns.GliderPattern;
 
 import static org.junit.Assert.assertSame;
 

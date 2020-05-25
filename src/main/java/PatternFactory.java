@@ -10,7 +10,7 @@ package src.main.java;
  *
  * @author Michele Cattaneo
  */
-public abstract class PatternFactory {
+public class PatternFactory {
     private final int rowsNeeded;
     private final int colsNeeded;
     public int[] rowPositions;

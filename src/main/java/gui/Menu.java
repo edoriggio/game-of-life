@@ -1,4 +1,7 @@
-package src.main.java;
+package src.main.java.gui;
+
+import src.main.java.GameOfLife;
+import src.main.java.Pattern;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -44,7 +47,7 @@ public class Menu extends JMenuBar {
             item.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(final ActionEvent e) {
-                    new FrameAdding(p, gameOfLife);
+                    new AddingFrame(p, gameOfLife);
                 }
             });
 

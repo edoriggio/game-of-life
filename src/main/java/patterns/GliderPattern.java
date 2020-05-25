@@ -1,4 +1,7 @@
-package src.main.java;
+package src.main.java.patterns;
+
+import src.main.java.BorderRule;
+import src.main.java.PatternFactory;
 
 /**
  * A definition of a GliderPattern.

@@ -1,4 +1,8 @@
-package src.main.java;
+package src.main.java.gui;
+
+import src.main.java.GameOfLife;
+import src.main.java.GameOfLifeListener;
+import src.main.java.State;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -13,18 +17,18 @@ import javax.swing.JPanel;
  * @author Edoardo Riggio
  * @version 24/05/2020
  */
-public class GridGui extends JPanel implements GameOfLifeListener {
+public class GridPanel extends JPanel implements GameOfLifeListener {
     private final GameOfLife gameOfLife;
     private final int rows;
     private final int cols;
     private final int squareSize;
 
     /**
-     * Constructor for the GridGui class.
+     * Constructor for the GridPanel class.
      * @param gameOfLife A game of life instance
      * @param squareSize The size of the squares of the grid
      */
-    public GridGui(final GameOfLife gameOfLife, final int squareSize) {
+    public GridPanel(final GameOfLife gameOfLife, final int squareSize) {
         super();
         this.gameOfLife = gameOfLife;
         this.rows = gameOfLife.getCurrentGrid().getRows();

@@ -1,5 +1,7 @@
 package src.main.java;
 
+import src.main.java.gui.ErrorFrame;
+
 import java.util.ArrayList;
 
 /**
@@ -35,8 +37,6 @@ public class GameOfLife {
         this.speed = 1000;
         this.maxTimeBetweenSteps = 1100;
         this.paused = false;
-
-
     }
 
     /**
@@ -112,7 +112,7 @@ public class GameOfLife {
         try {
             PatternInsert.insertPattern(pattern, this.grid1, this.borderRule, i, j);
         } catch (final PatternException exception) {
-            new FrameError("The pattern you are trying to insert does not fit");
+            new ErrorFrame("The pattern you are trying to insert does not fit");
         }
     }
 

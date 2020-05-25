@@ -1,5 +1,7 @@
 package src.main.java;
 
+import src.main.java.patterns.*;
+
 /**
  * This class is responsible to understand the type of pattern.
  * Given this pattern, it will insert it inside of a grid.

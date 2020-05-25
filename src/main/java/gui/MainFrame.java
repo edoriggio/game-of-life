@@ -1,4 +1,6 @@
-package src.main.java;
+package src.main.java.gui;
+
+import src.main.java.GameOfLife;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -18,7 +20,7 @@ import javax.swing.JPanel;
  * @author Edoardo Riggio
  * @version 24/05/2020
  */
-public class FrameMain extends JFrame {
+public class MainFrame extends JFrame {
 
     private final GameOfLife gameOfLife;
 
@@ -33,17 +35,17 @@ public class FrameMain extends JFrame {
     private final JButton pauseOrPlay;
 
     /**
-     * Constructor for the FrameMain class.
+     * Constructor for the MainFrame class.
      * @param gameOfLife An instance of game of life
      * @param size The size of the grid's squares
      */
-    public FrameMain(final GameOfLife gameOfLife, final int size) {
+    public MainFrame(final GameOfLife gameOfLife, final int size) {
         super("Game of Life");
 
         this.gameOfLife = gameOfLife;
 
         this.panel = new JPanel();
-        this.gridGui = new GridGui(gameOfLife, size);
+        this.gridGui = new GridPanel(gameOfLife, size);
         this.menu = new Menu(gameOfLife);
 
         this.clear = new JButton("Clear grid");
@@ -107,10 +109,10 @@ public class FrameMain extends JFrame {
 
         pauseOrPlay.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(final ActionEvent e) {
                 gameOfLife.pauseOrPlayGame();
-                String currentText = pauseOrPlay.getText();
-                String newText = (currentText.equals("Pause") ? "Play" : "Pause");
+                final String currentText = pauseOrPlay.getText();
+                final String newText = ("Pause".equals(currentText) ? "Play" : "Pause");
                 pauseOrPlay.setText(newText);
             }
         });
