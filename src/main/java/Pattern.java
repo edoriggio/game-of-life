@@ -18,7 +18,8 @@ public enum Pattern {
     PUFFER("Puffer"),
     GOSPERGLIDERGUN("Gosper Glider Gun"),
     HEXAPOLE("Hexapole"),
-    CIRCLEOFFIRE("Circle of Fire");
+    CIRCLEOFFIRE("Circle of Fire"),
+    DOUBLECIRCLEOFFIRE("Double circle of Fire");
 
     private final String name;
 

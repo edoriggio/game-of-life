@@ -50,10 +50,14 @@ public class PatternInsert {
                 success = new GosperGliderGunPattern(borderRule).insertPattern(grid, i, j);
                 break;
             case HEXAPOLE:
-                success = new HexapolePattern(borderRule).insertPattern(grid, i,j);
+                success = new HexapolePattern(borderRule).insertPattern(grid, i, j);
                 break;
             case CIRCLEOFFIRE:
-                success = new CircleOfFirePattern(borderRule).insertPattern(grid,i,j);
+                success = new CircleOfFirePattern(borderRule).insertPattern(grid,i, j);
+                //new CircleOfFirePattern(borderRule).insertPattern(grid, i+8, j+8);
+                break;
+            case DOUBLECIRCLEOFFIRE:
+                success = new DoubleCircleOfFire(borderRule).insertPattern(grid, i, j);
                 break;
             default:
                 throw new PatternException("Pattern not found");
