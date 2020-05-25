@@ -8,6 +8,12 @@ package src.main.java;
  * @version 24/05/2020
  */
 public enum Pattern {
+    BLOCK("Block"),
+    BEEHIVE("Beehive"),
+    LOAF("Loaf"),
+    BOAT("Boat"),
+    TUB("Tub"),
+
     GLIDER("Glider"),
     PUFFER("Puffer"),
     GOSPERGLIDERGUN("Gosper Glider Gun");

@@ -29,6 +29,18 @@ public class PatternInsert {
         final boolean success;
 
         switch (pattern) {
+            case BLOCK:
+                final PatternFactory block = new BlockPattern(borderRule);
+                success = block.insertPattern(grid, i, j);
+                break;
+            case BEEHIVE:
+                final PatternFactory beehive = new BeehivePattern(borderRule);
+                success = beehive.insertPattern(grid, i, j);
+                break;
+            case LOAF:
+                final PatternFactory loaf = new LoafPattern(borderRule);
+                success = loaf.insertPattern(grid, i, j);
+                break;
             case GLIDER:
                 final PatternFactory glider = new GliderPattern(borderRule);
                 success = glider.insertPattern(grid, i, j);

@@ -5,10 +5,7 @@ import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 /**
  * This class is responsible of creating the JFrame on which
@@ -19,6 +16,15 @@ import javax.swing.JPanel;
  */
 public class FrameMain extends JFrame {
 
+    private final JPanel panel;
+    private final JPanel gridGui;
+    private final JMenuBar menu;
+    private final JButton clear;
+    private final JButton random;
+    private final JButton decreaseSpeed;
+    private final JButton increaseSpeed;
+    private final JLabel speedLabel;
+
     /**
      * Constructor for the FrameMain class.
      * @param gameOfLife An instance of game of life
@@ -27,30 +33,31 @@ public class FrameMain extends JFrame {
     public FrameMain(final GameOfLife gameOfLife, final int size) {
         super("Game of Life");
 
-        final JPanel panel = new JPanel();
-        final GridGui gridGui = new GridGui(gameOfLife, size);
-        final Menu menu = new Menu(gameOfLife);
+        this.panel = new JPanel();
+        this.gridGui = new GridGui(gameOfLife, size);
+        this.menu = new Menu(gameOfLife);
 
-        final JButton clear = new JButton("Clear grid");
-        final JButton random = new JButton("Random");
-        final JButton decreaseSpeed = new JButton("-");
-        final JButton increaseSpeed = new JButton("+");
-        final JLabel speedLabel = new JLabel(gameOfLife.getSpeed().toString());
+        this.clear = new JButton("Clear grid");
+        this.random = new JButton("Random");
+        this.decreaseSpeed = new JButton("-");
+        this.increaseSpeed = new JButton("+");
+        this.speedLabel = new JLabel(gameOfLife.getSpeed().toString());
 
+        addComponents(gameOfLife);
+        buildFrame();
+    }
+
+    private void addComponents(final GameOfLife gameOfLife) {
         panel.add(random);
         panel.add(clear);
         panel.add(decreaseSpeed);
         panel.add(speedLabel);
         panel.add(increaseSpeed);
 
-        add(gridGui);
-        add(panel, BorderLayout.SOUTH);
-        setJMenuBar(menu);
-        pack();
-        setLocationRelativeTo(null);
-        setMinimumSize(new Dimension(gridGui.getWidth(),
-                gridGui.getHeight() + panel.getHeight() + menu.getHeight() + 31));
+        addDecorators(gameOfLife);
+    }
 
+    private void addDecorators(final GameOfLife gameOfLife) {
         clear.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(final ActionEvent e) {
@@ -80,6 +87,17 @@ public class FrameMain extends JFrame {
                 speedLabel.setText(gameOfLife.getSpeed().toString());
             }
         });
+    }
+
+    private void buildFrame() {
+        add(gridGui);
+        add(panel, BorderLayout.SOUTH);
+        setJMenuBar(menu);
+
+        pack();
+        setLocationRelativeTo(null);
+        setMinimumSize(new Dimension(gridGui.getWidth(),
+                gridGui.getHeight() + panel.getHeight() + menu.getHeight() + 31));
     }
 
 }

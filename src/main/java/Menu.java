@@ -7,7 +7,6 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
-
 /**
  * This class is used to create the menu of the application.
  *
@@ -48,6 +47,10 @@ public class Menu extends JMenuBar {
                     new FrameAdding(p, gameOfLife);
                 }
             });
+
+            if (p == Pattern.TUB) {
+                menu.addSeparator();
+            }
         }
     }
 
