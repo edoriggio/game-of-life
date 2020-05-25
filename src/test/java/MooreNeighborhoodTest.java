@@ -9,6 +9,11 @@ import static org.junit.Assert.assertArrayEquals;
 
 // Note that this Neighborhood Rules gives the positions in this order:
 // North, South, East, West, North-West, North-east, South-West, South-east
+
+/**
+ * Test Class for the MooreNeighborHood class.
+ * @author Michele Cattaneo
+ */
 public class MooreNeighborhoodTest {
 
     @Test

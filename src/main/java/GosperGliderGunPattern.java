@@ -2,6 +2,8 @@ package src.main.java;
 
 /**
  * A definition of a Gosper Glider Gun pattern.
+ *
+ * @author Michele Cattaneo
  */
 public class GosperGliderGunPattern extends PatternFactory {
 

@@ -7,6 +7,11 @@ import src.main.java.*;
 
 import static org.junit.Assert.*;
 
+/**
+ * Test class for the Compute class.
+ * @author Michele Cattaneo
+ */
+
 public class ComputeTest {
 
     Grid grid1;

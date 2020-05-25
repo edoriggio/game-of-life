@@ -6,6 +6,10 @@ import src.main.java.TorusRule;
 
 import static org.junit.Assert.*;
 
+/**
+ * Test class for TorusRule class.
+ * @author Michele Cattaneo
+ */
 public class TorusRuleTest {
 
     @Test

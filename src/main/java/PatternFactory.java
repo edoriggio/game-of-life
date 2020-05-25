@@ -7,6 +7,8 @@ package src.main.java;
  * rowPosition[k] gives the row index of the k-th cell while colPosition[k] the column
  * position. This class also depends on a BorderRule instance to re-direct cells that
  * would be otherwise out of bounds in the grid.
+ *
+ * @author Michele Cattaneo
  */
 public abstract class PatternFactory {
     private final int rowsNeeded;

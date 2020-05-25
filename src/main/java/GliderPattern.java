@@ -2,6 +2,8 @@ package src.main.java;
 
 /**
  * A definition of a GliderPattern.
+ *
+ * @author Michele Cattaneo
  */
 public class GliderPattern extends PatternFactory {
 

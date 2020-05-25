@@ -7,6 +7,10 @@ import src.main.java.*;
 
 import static org.junit.Assert.assertSame;
 
+/**
+ * Test class for PatternFactory class.
+ * @author Michele Cattaneo
+ */
 public class PatternFactoryTest {
     Grid grid;
     BorderRule borderRule;

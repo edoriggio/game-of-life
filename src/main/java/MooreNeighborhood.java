@@ -6,6 +6,8 @@ import java.util.LinkedList;
  * This Neighborhood represents the Moore rule, for that a cell in a grid has 8 neighboring cells
  * that creates a square around that cell. This type of neighbouring rule is the one used for the
  * Game Of Life.
+ *
+ * @author Michele Cattaneo
  */
 public class MooreNeighborhood extends Neighborhood {
 
