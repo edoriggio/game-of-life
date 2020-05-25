@@ -3,6 +3,8 @@ package src.main.java;
 import src.main.java.gui.ErrorFrame;
 
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Class used to represent a game of life. It is represented by two
@@ -21,6 +23,7 @@ public class GameOfLife {
     private int speed;
     private final int maxTimeBetweenSteps;
     private boolean paused;
+    private TimerTask timerTask;
 
     /**
      * Constructor for the class GameOfLife. Instantiate an empty
@@ -37,6 +40,8 @@ public class GameOfLife {
         this.speed = 1000;
         this.maxTimeBetweenSteps = 1100;
         this.paused = false;
+        //startExecutingSteps();
+
     }
 
     /**
@@ -73,15 +78,14 @@ public class GameOfLife {
 
     /**
      * Compute a step of game of life.
-     * @throws InterruptedException Exception for Thread.sleep()
      */
-    public void step() throws InterruptedException {
+    public void step() {
         Compute.computeNextGrid(neighbourRule, grid1, grid2);
         final Grid temp = grid1;
         grid1 = grid2;
         grid2 = temp;
         notifyGridChanged();
-        Thread.sleep(maxTimeBetweenSteps - speed);
+
     }
 
     /**
@@ -111,6 +115,7 @@ public class GameOfLife {
     public void addPattern(final Pattern pattern, final int i, final int j) {
         try {
             PatternInsert.insertPattern(pattern, this.grid1, this.borderRule, i, j);
+            notifyGridChanged();
         } catch (final PatternException exception) {
             new ErrorFrame("The pattern you are trying to insert does not fit");
         }
@@ -123,6 +128,12 @@ public class GameOfLife {
     public void changeSpeed(final int delta) {
         final int newSpeed = this.speed + delta;
         this.speed = newSpeed < this.maxTimeBetweenSteps && newSpeed > 0 ? newSpeed : this.speed;
+        // if the new speed was valid, we set 'speed' to have a different value,
+        // but the Timer is still executing the TimerTask at the rate specified by the previous
+        // value of time. Therefore we stop executing steps and start again so that the timer
+        // will execute the TimerTask with a rate that depends on the new value of 'speed'.
+        stopExecutingSteps();
+        startExecutingSteps();
     }
 
     /**
@@ -134,9 +145,17 @@ public class GameOfLife {
     }
 
     /**
-     * Set this GameOfLife to be paused if it's currently unpaused and vice versa.
+     * Start executing steps of the game if the game is currently not.
+     * Stop executing steps of the game if the game is currently running.
      */
     public void pauseOrPlayGame() {
+
+        if (paused) {
+            startExecutingSteps();
+        } else {
+            stopExecutingSteps();
+        }
+        // swap the value of 'paused'
         this.paused = !this.paused;
     }
 
@@ -147,5 +166,31 @@ public class GameOfLife {
     public boolean isPaused() {
         return this.paused;
     }
+
+    /**
+     * Execute steps of the game with a period that depends on the field 'speed'.
+     */
+    public void startExecutingSteps() {
+        // Instantiate a TimerTask for a Timer that executes a step of Game of Life.
+        timerTask = new TimerTask() {
+            // this method will execute a step of the game
+            @Override
+            public void run() {
+                step();
+            }
+        };
+        // Execute the TimerTask defined above at the specified rate.
+        new Timer().scheduleAtFixedRate(timerTask, 0, maxTimeBetweenSteps - speed);
+    }
+
+    /**
+     * Stop the execution of new steps of the game.
+     */
+    public void stopExecutingSteps() {
+        // by canceling the TimeTask, no new steps will be executed.
+        timerTask.cancel();
+    }
+
+
 
 }

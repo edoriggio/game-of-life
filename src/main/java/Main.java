@@ -24,22 +24,11 @@ public class Main {
         final MainFrame frame = new MainFrame(game, 10);
         frame.setVisible(true);
 
-        runGame(game);
+        // start executing steps of the instance of GameOfLife
+        game.startExecutingSteps();
+
     }
 
-    /**
-     * Run a game of life instance.
-     * @param game the GameOFLife to be run.
-     * @throws InterruptedException Interruption exception to be thrown.
-     */
-    public static void runGame(final GameOfLife game) throws InterruptedException {
-        while (true) {
-            Thread.sleep(10);
 
-            if (!game.isPaused()) {
-                game.step();
-            }
-        }
-    }
 
 }
