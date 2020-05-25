@@ -9,7 +9,11 @@ import src.main.java.PatternFactory;
  * @author Michele Cattaneo
  */
 public class DoubleCircleOfFire extends PatternFactory{
-
+    /*
+    The caseCol and baseRow arrays are the same as the ones from a CircleOfFire.
+    The finals arrays contains the same value in the first half and the second half
+    is the same value shifted by 8 cells, so that the second shape is shifted by 8.
+     */
     public DoubleCircleOfFire(final BorderRule rule) {
         super(19,19,rule);
         int[] baseCol = new int[]{4,6,2,5,8,3,5,7,1,2,3,5,7,8,9,5,
