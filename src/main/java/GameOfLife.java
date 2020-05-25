@@ -36,6 +36,7 @@ public class GameOfLife {
         this.maxTimeBetweenSteps = 1100;
         this.paused = false;
 
+
     }
 
     /**
