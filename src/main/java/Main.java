@@ -30,9 +30,10 @@ public class Main {
      * @param game the GameOFLife to be run.
      * @throws InterruptedException Interruption exception to be thrown.
      */
-    public static void runGame(GameOfLife game) throws InterruptedException {
+    public static void runGame(final GameOfLife game) throws InterruptedException {
         while (true) {
             Thread.sleep(10);
+
             if (!game.isPaused()) {
                 game.step();
             }

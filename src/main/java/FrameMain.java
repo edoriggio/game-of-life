@@ -51,8 +51,7 @@ public class FrameMain extends JFrame {
         this.decreaseSpeed = new JButton("-");
         this.increaseSpeed = new JButton("+");
         this.speedLabel = new JLabel(gameOfLife.getSpeed().toString());
-        this.pauseOrPlay = new JButton("pause");
-
+        this.pauseOrPlay = new JButton("Pause");
 
         addComponents();
         buildFrame();
@@ -62,13 +61,12 @@ public class FrameMain extends JFrame {
      * This method creates the components for the frame.
      */
     private void addComponents() {
+        panel.add(pauseOrPlay);
         panel.add(random);
         panel.add(clear);
         panel.add(decreaseSpeed);
         panel.add(speedLabel);
         panel.add(increaseSpeed);
-        panel.add(pauseOrPlay);
-
 
         addDecorators();
     }
@@ -112,12 +110,10 @@ public class FrameMain extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 gameOfLife.pauseOrPlayGame();
                 String currentText = pauseOrPlay.getText();
-                String newText = (currentText == "pause" ? "play" : "pause");
+                String newText = (currentText.equals("Pause") ? "Play" : "Pause");
                 pauseOrPlay.setText(newText);
             }
         });
-
-
     }
 
     /**
