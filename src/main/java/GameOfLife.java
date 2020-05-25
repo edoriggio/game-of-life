@@ -18,6 +18,7 @@ public class GameOfLife {
     private final ArrayList<GameOfLifeListener> listeners;
     private int speed;
     private final int maxTimeBetweenSteps;
+    private boolean paused;
 
     /**
      * Constructor for the class GameOfLife. Instantiate an empty
@@ -33,6 +34,8 @@ public class GameOfLife {
         this.listeners = new ArrayList<>();
         this.speed = 1000;
         this.maxTimeBetweenSteps = 1100;
+        this.paused = false;
+
 
     }
 
@@ -128,6 +131,21 @@ public class GameOfLife {
      */
     public Integer getSpeed() {
         return this.speed;
+    }
+
+    /**
+     * Set this GameOfLife to be paused if it's currently unpaused and vice versa.
+     */
+    public void pauseOrPlayGame() {
+        this.paused = !this.paused;
+    }
+
+    /**
+     * Check whether this GameOfLife is currently paused.
+     * @return true if this is paused, false otherwise
+     */
+    public boolean isPaused() {
+        return this.paused;
     }
 
 }

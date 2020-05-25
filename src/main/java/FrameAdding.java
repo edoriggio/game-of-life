@@ -130,7 +130,7 @@ public class FrameAdding extends JFrame {
         add.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(final ActionEvent actionEvent) {
-                if (input1.getText().isBlank()) {
+                if (input1.getText().isBlank() && input2.getText().isBlank()) {
                     gameOfLife.addPattern(pattern, 0, 0);
                 } else {
                     gameOfLife.addPattern(pattern, Integer.parseInt(input2.getText()),

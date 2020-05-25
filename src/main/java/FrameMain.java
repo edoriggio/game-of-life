@@ -24,6 +24,7 @@ public class FrameMain extends JFrame {
     private final JButton decreaseSpeed;
     private final JButton increaseSpeed;
     private final JLabel speedLabel;
+    private final JButton pauseOrPlay;
 
     /**
      * Constructor for the FrameMain class.
@@ -42,6 +43,8 @@ public class FrameMain extends JFrame {
         this.decreaseSpeed = new JButton("-");
         this.increaseSpeed = new JButton("+");
         this.speedLabel = new JLabel(gameOfLife.getSpeed().toString());
+        this.pauseOrPlay = new JButton("pause");
+
 
         addComponents(gameOfLife);
         buildFrame();
@@ -53,6 +56,8 @@ public class FrameMain extends JFrame {
         panel.add(decreaseSpeed);
         panel.add(speedLabel);
         panel.add(increaseSpeed);
+        panel.add(pauseOrPlay);
+
 
         addDecorators(gameOfLife);
     }
@@ -87,6 +92,18 @@ public class FrameMain extends JFrame {
                 speedLabel.setText(gameOfLife.getSpeed().toString());
             }
         });
+
+        pauseOrPlay.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                gameOfLife.pauseOrPlayGame();
+                String currentText = pauseOrPlay.getText();
+                String newText = (currentText == "pause" ? "play" : "pause");
+                pauseOrPlay.setText(newText);
+            }
+        });
+
+
     }
 
     private void buildFrame() {

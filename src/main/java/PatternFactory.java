@@ -11,8 +11,8 @@ package src.main.java;
 public abstract class PatternFactory {
     private final int rowsNeeded;
     private final int colsNeeded;
-    int[] rowPositions;
-    int[] colPositions;
+    public int[] rowPositions;
+    public int[] colPositions;
     private final BorderRule borderRule;
 
     /**
