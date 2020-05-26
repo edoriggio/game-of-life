@@ -82,7 +82,11 @@ public class GameOfLife {
      * Compute a step of game of life.
      */
     public void step() {
+        // compute the new grid into grid2 depending on the state of grid1
         Compute.computeNextGrid(neighbourRule, grid1, grid2);
+
+        // grid2 now contains the actual grid that we want to be shown at the beginning of next step
+        // therefore we swap the two references:
         final Grid temp = grid1;
         grid1 = grid2;
         grid2 = temp;
@@ -132,7 +136,7 @@ public class GameOfLife {
         this.speed = newSpeed < this.maxTimeBetweenSteps && newSpeed > 0 ? newSpeed : this.speed;
         // if the new speed was valid, we set 'speed' to have a different value,
         // but the Timer is still executing the TimerTask at the rate specified by the previous
-        // value of time. Therefore we stop executing steps and start again so that the timer
+        // value of speed. Therefore we stop executing steps and start again so that the timer
         // will execute the TimerTask with a rate that depends on the new value of 'speed'.
         stopExecutingSteps();
         startExecutingSteps();
