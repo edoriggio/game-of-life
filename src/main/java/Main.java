@@ -17,7 +17,6 @@ public class Main {
      * @throws InterruptedException Exception for the step timer
      */
     public static void main(final String[] args) throws InterruptedException {
-        
         // Model
         final GameOfLife game = new GameOfLife(70, 80);
 
