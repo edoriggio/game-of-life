@@ -54,6 +54,8 @@ public class MainFrame extends JFrame {
         this.increaseSpeed = new JButton("+");
         this.speedLabel = new JLabel(gameOfLife.getSpeed().toString());
         this.pauseOrPlay = new JButton("Pause");
+        //terminate process when frame is closed
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         addComponents();
         buildFrame();
