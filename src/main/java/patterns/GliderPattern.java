@@ -16,6 +16,7 @@ public class GliderPattern extends PatternFactory {
      */
     public GliderPattern(final BorderRule rule) {
         super(4, 3, rule);
+
         rowPositions = new int[]{0,1,1,2,2};
         colPositions = new int[]{2,0,2,2,1};
     }

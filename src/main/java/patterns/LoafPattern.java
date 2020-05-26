@@ -19,7 +19,6 @@ public class LoafPattern extends PatternFactory {
         super(4, 4, rule);
 
         rowPositions = new int[]{0,0,1,1,2,2,3};
-
         colPositions = new int[]{1,2,0,3,1,3,2};
     }
 

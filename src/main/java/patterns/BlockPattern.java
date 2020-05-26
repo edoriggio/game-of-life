@@ -19,7 +19,6 @@ public class BlockPattern extends PatternFactory {
         super(2, 2, rule);
 
         rowPositions = new int[]{0,1,0,1};
-
         colPositions = new int[]{0,0,1,1};
     }
 

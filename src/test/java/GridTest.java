@@ -20,9 +20,16 @@ public class GridTest {
     }
 
     @Test
-        public void testPrintGrid() {
-            Grid grid = new Grid(1,2);
-            grid.printGrid();
-        }
+    public void testPrintGrid() {
+        Grid grid = new Grid(1,2);
+        grid.printGrid();
+    }
+
+    @Test
+    public void testGetCell() {
+        Grid grid = new Grid(5,5);
+        grid.getCell(-1,-1);
+        grid.getCell(2,2);
+    }
 
 }
