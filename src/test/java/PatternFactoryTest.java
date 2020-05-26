@@ -12,6 +12,7 @@ import static org.junit.Assert.assertFalse;
 
 /**
  * Test class for PatternFactory class.
+ *
  * @author Michele Cattaneo
  */
 public class PatternFactoryTest {

@@ -7,7 +7,6 @@ import src.main.java.PatternFactory;
  * A definition of a Beehive pattern.
  *
  * @author Edoardo Riggio
- * @version 25/05/2020
  */
 public class BeehivePattern extends PatternFactory {
 

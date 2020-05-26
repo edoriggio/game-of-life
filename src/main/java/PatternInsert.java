@@ -1,23 +1,14 @@
 package src.main.java;
 
-import src.main.java.patterns.BeehivePattern;
-import src.main.java.patterns.BlockPattern;
-import src.main.java.patterns.BoatPattern;
-import src.main.java.patterns.CircleOfFirePattern;
-import src.main.java.patterns.DoubleCircleOfFirePattern;
-import src.main.java.patterns.GliderPattern;
-import src.main.java.patterns.GosperGliderGunPattern;
-import src.main.java.patterns.HexapolePattern;
-import src.main.java.patterns.LoafPattern;
-import src.main.java.patterns.PufferPattern;
-import src.main.java.patterns.TubPattern;
+import src.main.java.patterns.*;
+
+import java.beans.beancontext.BeanContext;
 
 /**
  * This class is responsible to understand the type of pattern.
  * Given this pattern, it will insert it inside of a grid.
  *
  * @author Edoardo Riggio
- * @version 24/05/2020
  */
 public class PatternInsert {
 
@@ -73,6 +64,21 @@ public class PatternInsert {
                 break;
             case BOAT:
                 success = new BoatPattern(borderRule).insertPattern(grid, i, j);
+                break;
+            case BLINKER:
+                success = new BlinkerPattern(borderRule).insertPattern(grid, i, j);
+                break;
+            case TOAD:
+                success = new ToadPattern(borderRule).insertPattern(grid, i, j);
+                break;
+            case BEACON:
+                success = new BeaconPattern(borderRule).insertPattern(grid, i, j);
+                break;
+            case LWSS:
+                success = new LWSSPattern(borderRule).insertPattern(grid, i, j);
+                break;
+            case FROTHINGPUFFER:
+                success = new FrothingPuffer(borderRule).insertPattern(grid, i, j);
                 break;
             default:
                 System.out.print(pattern.toString());

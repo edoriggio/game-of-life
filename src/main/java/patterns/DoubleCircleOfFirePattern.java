@@ -6,6 +6,7 @@ import src.main.java.PatternFactory;
 /**
  * A definition of a Double circle of Fire pattern.
  * Found out that putting 2 circle of fire next to another create a cool pattern.
+ *
  * @author Michele Cattaneo
  */
 public class DoubleCircleOfFirePattern extends PatternFactory {

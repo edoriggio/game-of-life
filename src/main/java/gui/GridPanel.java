@@ -15,7 +15,6 @@ import javax.swing.JPanel;
  * a a white square for each dead cell.
  *
  * @author Edoardo Riggio
- * @version 24/05/2020
  */
 public class GridPanel extends JPanel implements GameOfLifeListener {
     private final GameOfLife gameOfLife;

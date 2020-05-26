@@ -9,6 +9,7 @@ import static org.junit.Assert.*;
 
 /**
  * Test class for the Compute class.
+ *
  * @author Michele Cattaneo
  */
 

@@ -5,7 +5,6 @@ package src.main.java;
  * To each of them it assigns a more human readable String.
  *
  * @author Edoardo Riggio
- * @version 24/05/2020
  */
 public enum Pattern {
     BLOCK("Block"),
@@ -14,9 +13,15 @@ public enum Pattern {
     BOAT("Boat"),
     TUB("Tub"),
 
+    BLINKER("Blinker"),
+    TOAD("Toad"),
+    BEACON("Beacon"),
+
     GLIDER("Glider"),
+    LWSS("Light-weight Spaceship"),
 
     PUFFER("Puffer"),
+    FROTHINGPUFFER("Frothing Puffer"),
     GOSPERGLIDERGUN("Gosper Glider Gun"),
     HEXAPOLE("Hexapole"),
     CIRCLEOFFIRE("Circle of Fire"),

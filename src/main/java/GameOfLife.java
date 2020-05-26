@@ -12,6 +12,8 @@ import java.util.TimerTask;
  * state (the once to be shown) while the other is used to hold the
  * next state to be shown based on the first one. At each step the
  * two grids change their roles.
+ *
+ * @author Michele Cattaneo
  */
 public class GameOfLife {
 
@@ -190,7 +192,5 @@ public class GameOfLife {
         // by canceling the TimeTask, no new steps will be executed.
         timerTask.cancel();
     }
-
-
 
 }

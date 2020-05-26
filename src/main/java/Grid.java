@@ -5,7 +5,6 @@ package src.main.java;
  * This array is composed of cells.
  *
  * @author Edoardo Riggio
- * @version 24/05/2020
  */
 public class Grid {
 

@@ -5,6 +5,11 @@ import src.main.java.Grid;
 
 import static org.junit.Assert.*;
 
+/**
+ * Test class for the Grid class.
+ *
+ * @author Edoardo Riggio
+ */
 public class GridTest {
 
     @Test

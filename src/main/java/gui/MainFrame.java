@@ -18,7 +18,6 @@ import javax.swing.JPanel;
  * the application is built.
  *
  * @author Edoardo Riggio
- * @version 24/05/2020
  */
 public class MainFrame extends JFrame {
 

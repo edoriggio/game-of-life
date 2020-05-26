@@ -14,7 +14,6 @@ import javax.swing.JPanel;
  * This frame will appear when a PatternException is caught.
  *
  * @author Edoardo Riggio
- * @version 24/05/2020
  */
 public class ErrorFrame extends JFrame {
 

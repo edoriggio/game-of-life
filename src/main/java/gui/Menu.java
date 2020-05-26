@@ -14,7 +14,6 @@ import javax.swing.JMenuItem;
  * This class is used to create the menu of the application.
  *
  * @author Edoardo Riggio
- * @version 24/05/2020
  */
 public class Menu extends JMenuBar {
 
@@ -51,7 +50,7 @@ public class Menu extends JMenuBar {
                 }
             });
 
-            if (p == Pattern.TUB || p == Pattern.GLIDER) {
+            if (p == Pattern.TUB || p == Pattern.BEACON || p == Pattern.LWSS ||p == Pattern.FROTHINGPUFFER) {
                 menu.addSeparator();
             }
         }
