@@ -50,7 +50,7 @@ public class Menu extends JMenuBar {
                 }
             });
 
-            if (p == Pattern.TUB || p == Pattern.BEACON || p == Pattern.LWSS) {
+            if (p == Pattern.TUB || p == Pattern.BEACON || p == Pattern.LWSS ||p == Pattern.FROTHINGPUFFER) {
                 menu.addSeparator();
             }
         }

@@ -21,7 +21,7 @@ public class Main {
     public static void main(final String[] args) throws InterruptedException {
         
         // Model
-        final GameOfLife game = new GameOfLife(70, 80);
+        final GameOfLife game = new GameOfLife(90, 90);
 
         // GUI
         final MainFrame frame = new MainFrame(game, 10);

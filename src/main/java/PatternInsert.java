@@ -77,6 +77,9 @@ public class PatternInsert {
             case LWSS:
                 success = new LWSSPattern(borderRule).insertPattern(grid, i, j);
                 break;
+            case FROTHINGPUFFER:
+                success = new FrothingPuffer(borderRule).insertPattern(grid, i, j);
+                break;
             default:
                 System.out.print(pattern.toString());
                 throw new PatternException("Pattern not found");

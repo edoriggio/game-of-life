@@ -21,6 +21,7 @@ public enum Pattern {
     LWSS("Light-weight Spaceship"),
 
     PUFFER("Puffer"),
+    FROTHINGPUFFER("Frothing Puffer"),
     GOSPERGLIDERGUN("Gosper Glider Gun"),
     HEXAPOLE("Hexapole"),
     CIRCLEOFFIRE("Circle of Fire"),
