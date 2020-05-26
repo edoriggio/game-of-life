@@ -5,7 +5,6 @@ package src.main.java;
  * This cell has a status and can interact with neighboring cells.
  *
  * @author Edoardo Riggio
- * @version 24/05/2020
  */
 public class Cell {
 

@@ -8,6 +8,7 @@ import static org.junit.Assert.*;
 
 /**
  * Test class for TorusRule class.
+ *
  * @author Michele Cattaneo
  */
 public class TorusRuleTest {

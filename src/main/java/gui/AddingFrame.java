@@ -21,7 +21,6 @@ import javax.swing.JTextField;
  * coordinates.
  *
  * @author Edoardo Riggio
- * @version 24/05/2020
  */
 public class AddingFrame extends JFrame {
 

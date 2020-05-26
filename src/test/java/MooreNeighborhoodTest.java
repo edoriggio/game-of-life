@@ -12,6 +12,7 @@ import static org.junit.Assert.assertArrayEquals;
 
 /**
  * Test Class for the MooreNeighborHood class.
+ *
  * @author Michele Cattaneo
  */
 public class MooreNeighborhoodTest {

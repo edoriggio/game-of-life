@@ -4,6 +4,8 @@ import src.main.java.gui.MainFrame;
 
 /**
  * The class from which the application runs.
+ *
+ * @author Edoardo Riggio
  */
 public class Main {
 

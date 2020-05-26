@@ -6,6 +6,12 @@ import src.main.java.State;
 
 import static org.junit.Assert.*;
 
+/**
+ * Test class for the Cell class.
+ *
+ * @author Edoardo Riggio
+ */
+
 public class CellTest {
 
     @Test

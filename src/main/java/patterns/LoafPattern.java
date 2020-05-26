@@ -7,7 +7,6 @@ import src.main.java.PatternFactory;
  * A definition of a Loaf pattern.
  *
  * @author Edoardo Riggio
- * @version 25/05/2020
  */
 public class LoafPattern extends PatternFactory {
 
