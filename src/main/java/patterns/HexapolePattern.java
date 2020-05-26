@@ -16,6 +16,7 @@ public class HexapolePattern extends PatternFactory {
      */
     public HexapolePattern(final BorderRule rule) {
         super(9, 9, rule);
+
         rowPositions = new int[]{0,0,1,1,3,3,5,5,7,7,8,8};
         colPositions = new int[]{8,7,8,6,6,4,4,2,2,0,1,0};
     }

@@ -1,6 +1,16 @@
 package src.main.java;
 
-import src.main.java.patterns.*;
+import src.main.java.patterns.BeehivePattern;
+import src.main.java.patterns.BlockPattern;
+import src.main.java.patterns.BoatPattern;
+import src.main.java.patterns.CircleOfFirePattern;
+import src.main.java.patterns.DoubleCircleOfFirePattern;
+import src.main.java.patterns.GliderPattern;
+import src.main.java.patterns.GosperGliderGunPattern;
+import src.main.java.patterns.HexapolePattern;
+import src.main.java.patterns.LoafPattern;
+import src.main.java.patterns.PufferPattern;
+import src.main.java.patterns.TubPattern;
 
 /**
  * This class is responsible to understand the type of pattern.
@@ -12,7 +22,7 @@ import src.main.java.patterns.*;
 public class PatternInsert {
 
     private PatternInsert() {
-        // Not to be instantiated
+        // Not to be initialized
     }
 
     /**
@@ -53,11 +63,10 @@ public class PatternInsert {
                 success = new HexapolePattern(borderRule).insertPattern(grid, i, j);
                 break;
             case CIRCLEOFFIRE:
-                success = new CircleOfFirePattern(borderRule).insertPattern(grid,i, j);
-                //new CircleOfFirePattern(borderRule).insertPattern(grid, i+8, j+8);
+                success = new CircleOfFirePattern(borderRule).insertPattern(grid, i, j);
                 break;
             case DOUBLECIRCLEOFFIRE:
-                success = new DoubleCircleOfFire(borderRule).insertPattern(grid, i, j);
+                success = new DoubleCircleOfFirePattern(borderRule).insertPattern(grid, i, j);
                 break;
             case TUB:
                 success = new TubPattern(borderRule).insertPattern(grid, i, j);

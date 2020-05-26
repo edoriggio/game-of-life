@@ -51,7 +51,7 @@ public class Menu extends JMenuBar {
                 }
             });
 
-            if (p == Pattern.TUB) {
+            if (p == Pattern.TUB || p == Pattern.GLIDER) {
                 menu.addSeparator();
             }
         }

@@ -114,7 +114,7 @@ public class MainFrame extends JFrame {
             public void actionPerformed(final ActionEvent e) {
                 gameOfLife.pauseOrPlayGame();
                 final String currentText = pauseOrPlay.getText();
-                final String newText = ("Pause".equals(currentText) ? "Play" : "Pause");
+                final String newText = "Pause".equals(currentText) ? "Play" : "Pause";
                 pauseOrPlay.setText(newText);
             }
         });

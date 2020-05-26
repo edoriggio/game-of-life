@@ -19,7 +19,6 @@ public class BeehivePattern extends PatternFactory {
         super(3, 4, rule);
 
         rowPositions = new int[]{0,0,1,1,2,2};
-
         colPositions = new int[]{1,2,0,3,1,2};
     }
 
