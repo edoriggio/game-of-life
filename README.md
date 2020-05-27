@@ -1,7 +1,5 @@
 # The Game of Life
 
-## PF2 Final Java project
-
 Authors:  Michele Cattaneo & Edoardo Riggio
 
 For our final project we decided to create an interactive java program to simulate the famous John Horton Conway's Game of Life.
