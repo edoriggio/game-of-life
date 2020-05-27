@@ -39,7 +39,7 @@ Go to the folder containing the compiled files (.class):
 cd target/classes
 ```
 
-Run the Main class giving inputs in that order: **number of rows, number of columns, cell size**.
+Run the Main class giving inputs in this order: **number of rows, number of columns, cell size**.
 
 ```shell
 java src.main.java.Main 50 50 10
