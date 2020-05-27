@@ -1,5 +1,5 @@
 package src.test.java;
-import org.junit.After;
+
 import org.junit.Before;
 import org.junit.Test;
 import src.main.java.*;
@@ -21,9 +21,10 @@ public class PatternInsertTest {
     }
 
     @Test
-    public void testInsertOfEveryPattenrn() throws PatternException {
+    public void testInsertOfEveryPattern() throws PatternException {
         for (Pattern p : Pattern.values()) {
             PatternInsert.insertPattern(p, grid, rule, 0,0);
+            System.out.println(p.getName());
         }
     }
 
