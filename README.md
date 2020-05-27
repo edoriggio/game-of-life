@@ -21,7 +21,7 @@ By our implementation is however easy to modify those constraints into different
 ### Screenshots
 
 ![screen#1](https://github.com/usi-pf2-2020/project-gameoflife/blob/master/imgs/screen%231.png)
-![screen#2](https://github.com/usi-pf2-2020/project-gameoflife/blob/master/imgs/screen%232.gif)
+![screen#2](https://github.com/usi-pf2-2020/project-gameoflife/blob/master/imgs/screen%232.png)
 
 ### What the user can do
 
@@ -31,7 +31,7 @@ By our implementation is however easy to modify those constraints into different
 - Clear the current grid
 - Add a bunch of predefined interesting patterns of live cells that behave in a specific manner according to the rules, at any position in the grid. The pattern will only fail to be inserted if the whole pattern can not fit the current grid or the given position is not valid. It is however possible to insert a pattern close to the extremes of the grid, the parts that do not fit will simply be redirected to the positions defined by the current BorderRule that the game is using.
 
-#### How to run it
+### How to run it
 
 Go to the folder containing the compiled files (.class):
 
