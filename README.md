@@ -20,8 +20,8 @@ By our implementation is however easy to modify those constraints into different
 
 ### Screenshots
 
-![screen#1](./imgs/screen#1.png)
-![screen#2](./imgs/screen#2.gif)
+![screen#1](https://github.com/usi-pf2-2020/project-gameoflife/blob/master/imgs/screen%231.png)
+![screen#2](https://github.com/usi-pf2-2020/project-gameoflife/blob/master/imgs/screen%232.gif)
 
 ### What the user can do
 
