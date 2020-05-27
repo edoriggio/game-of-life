@@ -1,8 +1,21 @@
 package src.main.java;
 
-import src.main.java.patterns.*;
-
-import java.beans.beancontext.BeanContext;
+import src.main.java.patterns.BeaconPattern;
+import src.main.java.patterns.BeehivePattern;
+import src.main.java.patterns.BlinkerPattern;
+import src.main.java.patterns.BlockPattern;
+import src.main.java.patterns.BoatPattern;
+import src.main.java.patterns.CircleOfFirePattern;
+import src.main.java.patterns.DoubleCircleOfFirePattern;
+import src.main.java.patterns.FrothingPuffer;
+import src.main.java.patterns.GliderPattern;
+import src.main.java.patterns.GosperGliderGunPattern;
+import src.main.java.patterns.HexapolePattern;
+import src.main.java.patterns.LightweightPattern;
+import src.main.java.patterns.LoafPattern;
+import src.main.java.patterns.PufferPattern;
+import src.main.java.patterns.ToadPattern;
+import src.main.java.patterns.TubPattern;
 
 /**
  * This class is responsible to understand the type of pattern.
@@ -75,7 +88,7 @@ public class PatternInsert {
                 success = new BeaconPattern(borderRule).insertPattern(grid, i, j);
                 break;
             case LWSS:
-                success = new LWSSPattern(borderRule).insertPattern(grid, i, j);
+                success = new LightweightPattern(borderRule).insertPattern(grid, i, j);
                 break;
             case FROTHINGPUFFER:
                 success = new FrothingPuffer(borderRule).insertPattern(grid, i, j);

@@ -8,13 +8,13 @@ import src.main.java.PatternFactory;
  *
  * @author Edoardo Riggio
  */
-public class LWSSPattern extends PatternFactory {
+public class LightweightPattern extends PatternFactory {
 
     /**
-     * Constructor for a LWSSPattern.
+     * Constructor for a LightweightPattern.
      * @param rule the BorderRule that is applied to this PatternFactory
      */
-    public LWSSPattern(final BorderRule rule) {
+    public LightweightPattern(final BorderRule rule) {
         super(4, 5, rule);
 
         rowPositions = new int[]{0,0,1,2,2,3,3,3,3};
