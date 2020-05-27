@@ -28,6 +28,13 @@ public class Main {
      */
     public static void main(final String[] args) throws InterruptedException {
 
+        System.out.println("   ██████╗  █████╗ ███╗   ███╗███████╗ ██████╗ ███████╗██╗     ██╗███████╗███████╗\n" +
+                "  ██╔════╝ ██╔══██╗████╗ ████║██╔════╝██╔═══██╗██╔════╝██║     ██║██╔════╝██╔════╝\n" +
+                "  ██║  ███╗███████║██╔████╔██║█████╗  ██║   ██║█████╗  ██║     ██║█████╗  █████╗  \n" +
+                "  ██║   ██║██╔══██║██║╚██╔╝██║██╔══╝  ██║   ██║██╔══╝  ██║     ██║██╔══╝  ██╔══╝  \n" +
+                "  ╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗╚██████╔╝██║     ███████╗██║██║     ███████╗\n" +
+                "   ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝ ╚═════╝ ╚═╝     ╚══════╝╚═╝╚═╝     ╚══════╝\n");
+
         // Get terminal inputs:
         if (args.length == 3) {
             rows = Integer.parseInt(args[0]);
@@ -37,11 +44,15 @@ public class Main {
         // If no inputs were given, ask for them again:
         else {
             if (!readInputs()){
-                System.out.println("Your inputs seems to be invalid; default values were given: rows="+rows+" cols="+cols+" cell size="+cellSize);
+                System.out.println("Your inputs seems to be invalid; default values were given: rows="
+                        + rows + " cols=" + cols + " cell size=" + cellSize);
             }
         }
+
+        System.out.println("Generating grid...");
+
         // Make sure that the size of the cell is at most 20px
-        cellSize = cellSize > 20 ? 20 : cellSize;
+        cellSize = Math.min(cellSize, 20);
 
         // Model
         final GameOfLife game = new GameOfLife(rows, cols);
@@ -60,8 +71,8 @@ public class Main {
      * @return true if the input and the number of inputs was valid, false otherwise.
      */
     private static boolean readInputs() {
-        Scanner scanner = new Scanner(System.in);
-        ArrayList<Integer> inputs = new ArrayList<>();
+        final Scanner scanner = new Scanner(System.in);
+        final ArrayList<Integer> inputs = new ArrayList<>();
         System.out.println("Provide parameters in that order: number of rows, number of columns, cell size");
 
         int i = 0;
