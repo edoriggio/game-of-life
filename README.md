@@ -1,6 +1,6 @@
 # The Game of Life
 
-### PF2 Final Java project
+## PF2 Final Java project
 
 Authors:  Michele Cattaneo & Edoardo Riggio
 
@@ -18,7 +18,7 @@ For our implementation we made our grid to actually be a Torus, meaning that the
 
 By our implementation is however easy to modify those constraints into different ones, by implementing different sub-classes of the superclasses Neighbourhood ( define which cells are considered as neighbours or a given cell) and BorderRule ( define how the extremas of the grid are handled ).
 
-What the user can do:
+### What the user can do
 
 - Visualise a game with cells randomly populated with dead and alive cells.
 - Stop the execution of the game and continue it at any time
@@ -26,4 +26,7 @@ What the user can do:
 - Clear the current grid
 - Add a bunch of predefined interesting patterns of live cells that behave in a specific manner according to the rules, at any position in the grid. The pattern will only fail to be inserted if the whole pattern can not fit the current grid or the given position is not valid. It is however possible to insert a pattern close to the extremes of the grid, the parts that do not fit will simply be redirected to the positions defined by the current BorderRule that the game is using.
 
+### Screenshots
 
+![screen#1](/img/screen#1.png)
+![screen#2](/img/screen#2.gif)
