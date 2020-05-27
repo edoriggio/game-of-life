@@ -2,10 +2,13 @@ package src.main.java;
 
 import src.main.java.gui.MainFrame;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 /**
  * The class from which the application runs.
  *
- * @author Edoardo Riggio
+ * @author Edoardo Riggio & Michele Cattaneo
  */
 public class Main {
 
@@ -15,15 +18,55 @@ public class Main {
 
     /**
      * Run the application.
-     * @param args the command line arguments
+     * @param args the command line arguments in that order: number of rows, number of columns, cell size ( max 20px )
      * @throws InterruptedException Exception for the step timer
      */
     public static void main(final String[] args) throws InterruptedException {
+
+        int rows = 80;
+        int cols = 80;
+        int cellSize = 10;
+
+        // Get terminal inputs:
+        if (args.length == 3) {
+            rows = Integer.parseInt(args[0]);
+            cols = Integer.parseInt(args[1]);
+            cellSize = Integer.parseInt(args[2]);
+        }
+        // If no inputs were given, ask for them again:
+        else {
+            Scanner scanner = new Scanner(System.in);
+            ArrayList<Integer> inputs = new ArrayList<>();
+            System.out.println("Provide parameters in that order: number of rows, number of columns, cell size");
+
+            int i = 0;
+            while (i < 3) {
+                if (scanner.hasNextInt()) {
+                    inputs.add(scanner.nextInt());
+
+                }
+                i++;
+            }
+            // If the given inputs and their number were valid
+            if (inputs.size() == 3) {
+                rows = inputs.get(0);
+                cols = inputs.get(1);
+                cellSize = inputs.get(2);
+            }
+            // If inputs were not valid, use the default ones defined at the beginning and notify in the standard output.
+            else {
+                System.out.println("Your inputs seems to be invalid; default values were given: rows="+rows+" cols="+cols+" cell size="+cellSize);
+            }
+
+        }
+        // Make sure that the size of the cell is at most 20px
+        cellSize = cellSize > 20 ? 20 : cellSize;
+
         // Model
-        final GameOfLife game = new GameOfLife(90, 90);
+        final GameOfLife game = new GameOfLife(rows, cols);
 
         // GUI
-        final MainFrame frame = new MainFrame(game, 10);
+        final MainFrame frame = new MainFrame(game, cellSize);
         frame.setVisible(true);
 
         // start executing steps of the instance of GameOfLife
