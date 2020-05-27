@@ -20,8 +20,8 @@ By our implementation is however easy to modify those constraints into different
 
 ### Screenshots
 
-![screen#1](screen1)
-![screen#2](screen2)
+![screen#1](./imgs/screen#1.png)
+![screen#2](./imgs/screen#2.gif)
 
 ### What the user can do
 
@@ -56,6 +56,3 @@ java src.main.java.Main
 There will be a message showing in the terminal asking to provide the inputs, which you can give in a single row or one by one.
 
 If the number of inputs is not 3 or the inputs are invalid, the game will have some default values for the number of row, columns and the size of the pixel.
-
-[screen1]: ./imgs/screen#1.png
-[screen2]: ./imgs/screen#2.png
