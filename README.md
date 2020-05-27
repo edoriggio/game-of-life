@@ -20,8 +20,8 @@ By our implementation is however easy to modify those constraints into different
 
 ### Screenshots
 
-![screen#1](/img/screen#1.png)
-![screen#2](/img/screen#2.gif)
+![screen#1](/imgs/screen#1.png)
+![screen#2](/imgs/screen#2.gif)
 
 ### What the user can do
 
