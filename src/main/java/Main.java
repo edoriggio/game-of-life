@@ -27,27 +27,27 @@ public class Main {
      */
     public static void main(final String[] args) {
 
-        System.out.println("   ██████╗  █████╗ ███╗   ███╗███████╗ ██████╗"
-                + " ███████╗██╗     ██╗███████╗███████╗\n"
-                + "  ██╔════╝ ██╔══██╗████╗ ████║██╔════╝██╔═══██╗██╔════╝██║ "
-                + "    ██║██╔════╝██╔════╝\n"
-                + "  ██║  ███╗███████║██╔████╔██║█████╗  ██║   ██║█████╗  ██║ "
-                + "    ██║█████╗  █████╗  \n"
-                + "  ██║   ██║██╔══██║██║╚██╔╝██║██╔══╝  ██║   ██║██╔══╝  ██║ "
-                + "    ██║██╔══╝  ██╔══╝  \n"
-                + "  ╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗╚██████╔╝██║     ███"
-                + "████╗██║██║     ███████╗\n"
-                + "   ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝ ╚═════╝ ╚═╝     ╚═══"
-                + "═══╝╚═╝╚═╝     ╚══════╝\n");
+        System.out.println("   ██████╗  █████╗ ███╗   ███╗███████╗ "
+                + "██████╗ ███████╗██╗     ██╗███████╗███████╗\n"
+                + "  ██╔════╝ ██╔══██╗████╗ ████║██╔════╝██╔═══██╗"
+                + "██╔════╝██║     ██║██╔════╝██╔════╝\n"
+                + "  ██║  ███╗███████║██╔████╔██║█████╗  ██║   ██║"
+                + "█████╗  ██║     ██║█████╗  █████╗  \n"
+                + "  ██║   ██║██╔══██║██║╚██╔╝██║██╔══╝  ██║   ██║"
+                + "██╔══╝  ██║     ██║██╔══╝  ██╔══╝  \n"
+                + "  ╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗╚██████╔╝"
+                + "██║     ███████╗██║██║     ███████╗\n"
+                + "   ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝ ╚═════╝ ╚═╝"
+                + "     ╚══════╝╚═╝╚═╝     ╚══════╝\n");
 
-        // Get terminal inputs, if no inputs were given, ask for them again:
+        // Get terminal inputs, or if no inputs were given, ask for them again
         if (args.length == 3) {
             rows = Integer.parseInt(args[0]);
             cols = Integer.parseInt(args[1]);
             cellSize = Integer.parseInt(args[2]);
         } else {
             if (!readInputs()) {
-                System.out.println("Your inputs seems to be invalid; default values "
+                System.out.println("Your inputs seems to be invalid; default values"
                         + "were given: rows=" + rows + " cols=" + cols + " cell size="
                         + cellSize);
             }
@@ -77,8 +77,8 @@ public class Main {
     private static boolean readInputs() {
         final Scanner scanner = new Scanner(System.in);
         final ArrayList<Integer> inputs = new ArrayList<>();
-        System.out.println("Provide parameters in that order: number of rows, number of"
-                + " columns, cell size");
+        System.out.println("Provide parameters in this order: number of rows,"
+                + "number of columns, cell size");
 
         int i = 0;
         while (i < 3) {
