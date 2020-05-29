@@ -22,7 +22,7 @@ import javax.swing.JTextField;
  *
  * @author Edoardo Riggio
  */
-public class AddingFrame extends JFrame {
+public class FrameAdder extends JFrame {
 
     private final int rows;
     private final int cols;
@@ -34,11 +34,11 @@ public class AddingFrame extends JFrame {
     private final JButton cancel;
 
     /**
-     * Constructor for the AddingFrame class.
+     * Constructor for the FrameAdder class.
      * @param pattern The pattern to be added
      * @param gameOfLife An instance of game of life
      */
-    public AddingFrame(final Pattern pattern, final GameOfLife gameOfLife) {
+    public FrameAdder(final Pattern pattern, final GameOfLife gameOfLife) {
         super("Add a " + pattern.getName());
 
         this.rows = gameOfLife.getCurrentGrid().getRows();

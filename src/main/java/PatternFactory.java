@@ -30,7 +30,7 @@ public class PatternFactory {
     }
 
     /**
-     * PatternInsert the specific pattern of the concrete class in the given grid
+     * PatternAdder the specific pattern of the concrete class in the given grid
      * at the given position. A pattern can be placed only if there's enough space,
      * meaning that each pattern requires a certain amount of rows and columns. Also
      * the given position must be in bound of the grid.

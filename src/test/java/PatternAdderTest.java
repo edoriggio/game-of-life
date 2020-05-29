@@ -5,11 +5,11 @@ import org.junit.Test;
 import src.main.java.*;
 
 /**
- * Test class for the class PatternInsert.
+ * Test class for the class PatternAdder.
  *
  * @author Michele Cattaneo
  */
-public class PatternInsertTest {
+public class PatternAdderTest {
     private Grid grid;
     private BorderRule rule;
 
@@ -23,7 +23,7 @@ public class PatternInsertTest {
     @Test
     public void testInsertOfEveryPattern() throws PatternException {
         for (Pattern p : Pattern.values()) {
-            PatternInsert.insertPattern(p, grid, rule, 0,0);
+            PatternAdder.insertPattern(p, grid, rule, 0,0);
             System.out.println(p.getName());
         }
     }

@@ -120,7 +120,7 @@ public class GameOfLife {
      */
     public void addPattern(final Pattern pattern, final int i, final int j) {
         try {
-            PatternInsert.insertPattern(pattern, this.grid1, this.borderRule, i, j);
+            PatternAdder.insertPattern(pattern, this.grid1, this.borderRule, i, j);
             notifyGridChanged();
         } catch (final PatternException exception) {
             new ErrorFrame("The pattern you are trying to insert does not fit");

@@ -23,14 +23,14 @@ import src.main.java.patterns.TubPattern;
  *
  * @author Edoardo Riggio
  */
-public class PatternInsert {
+public class PatternAdder {
 
-    private PatternInsert() {
+    private PatternAdder() {
         // Not to be initialized
     }
 
     /**
-     * PatternInsert a pattern into a grid given its name.
+     * PatternAdder a pattern into a grid given its name.
      * @param pattern The type of pattern to be inserted
      * @param grid The grid onto which the pattern needs to be placed
      * @param borderRule The border rule to be used

@@ -46,7 +46,7 @@ public class Menu extends JMenuBar {
             item.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(final ActionEvent e) {
-                    new AddingFrame(p, gameOfLife);
+                    new FrameAdder(p, gameOfLife);
                 }
             });
 
