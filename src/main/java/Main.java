@@ -24,9 +24,8 @@ public class Main {
      * Run the application.
      * @param args the command line arguments in that order:
      *             number of rows, number of columns, cell size ( max 20px )
-     * @throws InterruptedException Exception for the step timer
      */
-    public static void main(final String[] args) throws InterruptedException {
+    public static void main(final String[] args) {
 
         System.out.println("   ██████╗  █████╗ ███╗   ███╗███████╗ ██████╗"
                 + " ███████╗██╗     ██╗███████╗███████╗\n"
