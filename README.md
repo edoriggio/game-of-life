@@ -1,6 +1,6 @@
 # The Game of Life
 
-**PF2 Final Java project**
+**Programming Fundamentals 2 Course - Final project - @USI**
 
 Authors:  Michele Cattaneo & Edoardo Riggio
 
