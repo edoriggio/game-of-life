@@ -4,7 +4,7 @@
 
 Authors:  Michele Cattaneo & Edoardo Riggio
 
-For our final project we decided to create an interactive java program to simulate the famous John Horton Conway's Game of Life.
+For our final project we decided to create an interactive java program to simulate the famous John Horton Conway's [Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).
 
 The game is a cellular automata which rules can be condensed the following way:
 
