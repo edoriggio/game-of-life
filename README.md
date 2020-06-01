@@ -1,7 +1,6 @@
 # The Game of Life
 
 **Programming Fundamentals 2 Course - Final project - @USI**
-
 Authors:  Michele Cattaneo & Edoardo Riggio
 
 For our final project we decided to create an interactive java program to simulate the famous John Horton Conway's Game of Life.
