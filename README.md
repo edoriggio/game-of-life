@@ -33,26 +33,4 @@ By our implementation is however easy to modify those constraints into different
 
 ### How to run it
 
-Go to the folder containing the compiled files (.class):
-
-```shell
-cd target/classes
-```
-
-Run the Main class giving inputs in this order: **number of rows, number of columns, cell size**.
-
-```shell
-java src.main.java.Main 50 50 10
-```
-
-This will result in a new frame of the Game of Life popping up with 50 rows, 50 columns and the cell size of 10 pixels
-
-Alternatively you can also not give any inputs like so:
-
-```shell
-java src.main.java.Main
-```
-
-There will be a message showing in the terminal asking to provide the inputs, which you can give in a single row or one by one.
-
-If the number of inputs is not 3 or the inputs are invalid, the game will have some default values for the number of row, columns and the size of the pixel.
+A release is now available, download it and run it.
